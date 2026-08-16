@@ -1,0 +1,42 @@
+---
+import type { LocaleCopy } from '../content/types';
+
+interface Props {
+  acceptedLabel: string;
+  reviewLabel: string;
+  accepted: LocaleCopy['publicationsAccepted'];
+  review: LocaleCopy['publicationsReview'];
+}
+
+const { acceptedLabel, reviewLabel, accepted, review } = Astro.props;
+---
+
+<section class="section section--paper" id="publications">
+  <div class="wrap">
+    <h2>{acceptedLabel}</h2>
+    <div class="pub-list">
+      {
+        accepted.map((p) => (
+          <article class="pub">
+            <strong>{p.title}</strong>
+            <span class="venue">{p.venue}</span>
+            {p.note ? <span class="note">{p.note}</span> : null}
+          </article>
+        ))
+      }
+    </div>
+
+    <h2>{reviewLabel}</h2>
+    <div class="pub-list">
+      {
+        review.map((p) => (
+          <article class="pub">
+            <strong>{p.title}</strong>
+            <span class="venue">{p.venue}</span>
+            {p.note ? <span class="note">{p.note}</span> : null}
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

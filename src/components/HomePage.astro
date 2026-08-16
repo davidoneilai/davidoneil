@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from './SiteHeader.astro';
+import Hero from './Hero.astro';
+import ExperienceTimeline from './ExperienceTimeline.astro';
+import CaseStudies from './CaseStudies.astro';
+import Publications from './Publications.astro';
+import Skills from './Skills.astro';
+import Ventures from './Ventures.astro';
+import Education from './Education.astro';
+import Contact from './Contact.astro';
+import SiteFooter from './SiteFooter.astro';
+import type { Locale } from '../content/types';
+import { getCopy, cvHref } from '../content';
+import { profile } from '../content/profile';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getCopy(locale);
+const base = import.meta.env.BASE_URL;
+const cv = cvHref(locale, base);
+const photoSrc = `${base}${profile.photo}`;
+const title = `${profile.name} · ${t.role}`;
+---
+
+<BaseLayout locale={locale} title={title} description={t.summary}>
+  <SiteHeader
+    locale={locale}
+    cvHref={cv}
+    ctaCv={t.ctaCv}
+    langLabel={t.langLabel}
+    nav={{
+      experience: t.navExperience,
+      cases: t.navCases,
+      papers: t.navPapers,
+      skills: t.navSkills,
+      contact: t.navContact,
+    }}
+  />
+
+  <main>
+    <Hero copy={t} cvHref={cv} photoSrc={photoSrc} />
+    <ExperienceTimeline label={t.experienceLabel} items={t.experience} />
+    <CaseStudies copy={t} />
+    <Publications
+      acceptedLabel={t.pubsAcceptedLabel}
+      reviewLabel={t.pubsReviewLabel}
+      accepted={t.publicationsAccepted}
+      review={t.publicationsReview}
+    />
+    <Skills label={t.skillsLabel} clusters={t.skills} />
+    <Ventures label={t.builderLabel} items={t.ventures} />
+    <Education label={t.educationLabel} items={t.education} />
+    <Contact copy={t} cvHref={cv} />
+  </main>
+
+  <SiteFooter role={t.role} />
+</BaseLayout>

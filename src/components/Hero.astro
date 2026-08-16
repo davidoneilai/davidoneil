@@ -1,0 +1,50 @@
+---
+import type { LocaleCopy } from '../content/types';
+import { profile } from '../content/profile';
+
+interface Props {
+  copy: LocaleCopy;
+  cvHref: string;
+  photoSrc: string;
+}
+
+const { copy, cvHref, photoSrc } = Astro.props;
+---
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="eyebrow hero-anim">{copy.role}</p>
+      <h1 class="hero-anim">{profile.name}</h1>
+      <p class="hero__tagline hero-anim">{copy.headline}</p>
+      <p class="hero__summary hero-anim">{copy.summary}</p>
+      <div class="hero__actions hero-anim">
+        <a class="btn" href={cvHref} download>{copy.ctaCv}</a>
+        <a class="btn btn--ghost" href="#cases">{copy.ctaWork}</a>
+        <a class="btn btn--ghost" href="#contact">{copy.ctaContact}</a>
+      </div>
+    </div>
+    <aside class="hero__aside hero-anim">
+      <figure class="hero__photo">
+        <img
+          src={photoSrc}
+          alt={profile.name}
+          width="640"
+          height="641"
+          loading="eager"
+          decoding="async"
+        />
+      </figure>
+      <div class="stats">
+        {
+          copy.stats.map((stat) => (
+            <div>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </div>
+          ))
+        }
+      </div>
+    </aside>
+  </div>
+</section>

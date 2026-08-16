@@ -1,0 +1,15 @@
+---
+import { profile } from '../content/profile';
+
+interface Props {
+  role: string;
+}
+
+const { role } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    {profile.name} · {role} · {profile.location}
+  </div>
+</footer>

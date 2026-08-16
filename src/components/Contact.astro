@@ -1,0 +1,28 @@
+---
+import type { LocaleCopy } from '../content/types';
+import { profile } from '../content/profile';
+
+interface Props {
+  copy: LocaleCopy;
+  cvHref: string;
+}
+
+const { copy, cvHref } = Astro.props;
+const tel = profile.phone.replace(/\s/g, '');
+---
+
+<section class="section section--navy" id="contact">
+  <div class="wrap">
+    <h2>{copy.contactLabel}</h2>
+    <div class="contact-grid">
+      <a href={`mailto:${profile.email}`}>{profile.email}</a>
+      <a href={`tel:${tel}`}>{profile.phone}</a>
+      <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+      {profile.github ? (
+        <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+      ) : null}
+      <span>{profile.location}</span>
+      <a href={cvHref} download>{copy.ctaCv}</a>
+    </div>
+  </div>
+</section>

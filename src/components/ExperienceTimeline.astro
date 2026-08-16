@@ -1,0 +1,47 @@
+---
+import type { LocaleCopy } from '../content/types';
+
+interface Props {
+  label: string;
+  items: LocaleCopy['experience'];
+}
+
+const { label, items } = Astro.props;
+---
+
+<section class="section section--paper" id="experience">
+  <div class="wrap">
+    <p class="section__label">{label}</p>
+    <ol class="timeline">
+      {
+        items.map((job) => (
+          <li>
+            {job.href ? (
+              <a href={job.href}>
+                <div>
+                  <h3 class="timeline__title">{job.title}</h3>
+                  <p class="timeline__org">{job.org}</p>
+                </div>
+                <p class="timeline__summary">{job.summary}</p>
+                {job.period ? (
+                  <span class="timeline__meta">{job.period}</span>
+                ) : (
+                  <span class="timeline__arrow" aria-hidden="true">↗</span>
+                )}
+              </a>
+            ) : (
+              <div class="timeline__row">
+                <div>
+                  <h3 class="timeline__title">{job.title}</h3>
+                  <p class="timeline__org">{job.org}</p>
+                </div>
+                <p class="timeline__summary">{job.summary}</p>
+                {job.period ? <span class="timeline__meta">{job.period}</span> : null}
+              </div>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

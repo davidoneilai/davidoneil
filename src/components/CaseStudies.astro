@@ -1,0 +1,71 @@
+---
+import type { LocaleCopy } from '../content/types';
+
+interface Props {
+  copy: LocaleCopy;
+}
+
+const { copy } = Astro.props;
+---
+
+<section class="section" id="cases">
+  <div class="wrap">
+    <p class="section__label">{copy.casesLabel}</p>
+    <div class="cases">
+      {
+        copy.cases.map((c) => (
+          <article class="case" id={`case-${c.id}`}>
+            <div class="case__top">
+              <div class="case__index">{c.index}</div>
+              <div>
+                <p class="case__org">{c.org}</p>
+                <h3>{c.title}</h3>
+                <p class="case__role">{c.role}</p>
+                <p class="case__sub">{c.subtitle}</p>
+              </div>
+            </div>
+
+            {c.metrics?.length ? (
+              <div class="case__metrics">
+                {c.metrics.map((m) => (
+                  <div class="metric">
+                    <strong>{m.value}</strong>
+                    <span>{m.label}</span>
+                  </div>
+                ))}
+              </div>
+            ) : null}
+
+            <div class="case__grid">
+              <div class="case-block">
+                <h4>{copy.caseContextLabel}</h4>
+                <p>{c.context}</p>
+              </div>
+              <div class="case-block">
+                <h4>{copy.caseDecisionLabel}</h4>
+                <p>{c.decision}</p>
+              </div>
+              <div class="case-block">
+                <h4>{copy.caseLeadershipLabel}</h4>
+                <p>{c.leadership}</p>
+              </div>
+              <div class="case-block">
+                <h4>{copy.caseOutcomeLabel}</h4>
+                <p>{c.outcome}</p>
+              </div>
+            </div>
+
+            <div class="case__stack">
+              <h4>{copy.caseStackLabel}</h4>
+              <div class="tags">
+                {c.stack.map((item) => (
+                  <span class="tag">{item}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

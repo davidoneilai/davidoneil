@@ -1,0 +1,30 @@
+---
+import type { LocaleCopy } from '../content/types';
+
+interface Props {
+  label: string;
+  clusters: LocaleCopy['skills'];
+}
+
+const { label, clusters } = Astro.props;
+---
+
+<section class="section" id="skills">
+  <div class="wrap">
+    <p class="section__label">{label}</p>
+    <div class="skills">
+      {
+        clusters.map((cluster) => (
+          <div class="skill-cluster">
+            <h3>{cluster.cluster}</h3>
+            <div class="tags">
+              {cluster.items.map((item) => (
+                <span class="tag">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

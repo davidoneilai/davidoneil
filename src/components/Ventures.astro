@@ -1,0 +1,26 @@
+---
+import type { LocaleCopy } from '../content/types';
+
+interface Props {
+  label: string;
+  items: LocaleCopy['ventures'];
+}
+
+const { label, items } = Astro.props;
+---
+
+<section class="section section--paper" id="ventures">
+  <div class="wrap">
+    <p class="section__label">{label}</p>
+    <div class="ventures">
+      {
+        items.map((v) => (
+          <article class="venture">
+            <h3>{v.name}</h3>
+            <p>{v.blurb}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
