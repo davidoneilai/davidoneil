@@ -13,15 +13,17 @@ export const localeLabels: Record<Locale, string> = {
 
 const copyByLocale: Record<Locale, LocaleCopy> = { en, pt, zh };
 
+const cvByLocale: Record<Locale, string> = {
+  en: 'cv-en.pdf',
+  pt: 'cv-pt.pdf',
+  zh: 'cv-zh.pdf',
+};
+
 export function getCopy(locale: Locale): LocaleCopy {
   return copyByLocale[locale] ?? en;
 }
 
-/** Prefer a locale-matched CV when available; fall back to PT. */
+/** Locale-matched CV download. */
 export function cvHref(locale: Locale, base: string): string {
-  const preferred =
-    locale === 'pt' ? 'cv-pt.pdf' : locale === 'zh' ? 'cv-zh.pdf' : 'cv-en.pdf';
-  const available = new Set(['cv-pt.pdf']);
-  const file = available.has(preferred) ? preferred : 'cv-pt.pdf';
-  return `${base}${file}`;
+  return `${base}${cvByLocale[locale] ?? cvByLocale.en}`;
 }

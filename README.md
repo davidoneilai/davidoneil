@@ -39,7 +39,8 @@ GITHUB_PAGES=true npm run build
 |------|---------|
 | `src/content/profile.ts` | Name, contacts, photo |
 | `src/content/en.ts` / `pt.ts` / `zh.ts` | Locale copy (cases, pubs, skills) |
-| `public/cv-pt.pdf` | CV download (EN/ZH fall back to PT until localized PDFs ship) |
+| `public/cv-en.pdf` / `cv-pt.pdf` / `cv-zh.pdf` | Locale-matched CV downloads |
+| `cv/en.typ` / `cv/zh.typ` | Typst sources for EN/ZH PDFs (`npm run cv`) |
 | `public/david.png` | Hero photo |
 
 ## Deploy
