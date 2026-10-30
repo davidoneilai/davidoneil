@@ -1,0 +1,14 @@
+---
+interface Props {
+  name: string;
+  index?: string;
+  current?: boolean;
+}
+
+const { name, index, current = false } = Astro.props;
+---
+
+<p class:list={['block-kicker', { 'is-current': current }]}>
+  {index && <span>{index}</span>}
+  {name}
+</p>

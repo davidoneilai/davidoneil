@@ -52,10 +52,16 @@ const title = `${profile.name} · ${t.role}`;
       review={t.publicationsReview}
     />
     <Skills label={t.skillsLabel} clusters={t.skills} />
+    <Ventures label={t.openSourceLabel} items={t.openSource} id="open-source" />
     <Ventures label={t.builderLabel} items={t.ventures} />
     <Education label={t.educationLabel} items={t.education} />
     <Contact copy={t} cvHref={cv} />
   </main>
 
-  <SiteFooter role={t.role} />
+  <SiteFooter
+    role={t.role}
+    tokens={t.tokens}
+    nextLabel={t.nextTokenLabel}
+    replayLabel={t.replayLabel}
+  />
 </BaseLayout>

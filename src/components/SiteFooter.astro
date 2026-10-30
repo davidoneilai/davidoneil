@@ -1,15 +1,63 @@
 ---
 import { profile } from '../content/profile';
+import type { LocaleCopy } from '../content/types';
+import BlockKicker from './BlockKicker.astro';
 
 interface Props {
   role: string;
+  tokens: LocaleCopy['tokens'];
+  nextLabel: string;
+  replayLabel: string;
 }
 
-const { role } = Astro.props;
+const { role, tokens, nextLabel, replayLabel } = Astro.props;
+const final = tokens[tokens.length - 1];
+const rows: [string, number][] = [[final.t, final.p], ...final.alt];
 ---
 
 <footer class="site-footer">
-  <div class="wrap">
-    {profile.name} · {role} · {profile.location}
+  <div class="wrap site-footer__grid">
+    <div>
+      <BlockKicker name="lm head" />
+      <p class="site-footer__id">{profile.name}</p>
+      <p class="site-footer__meta">{role} · {profile.location}</p>
+      <p class="site-footer__eq">
+        p(x<sub>t</sub> | x<sub>&lt;t</sub>) = softmax(W<sub>U</sub> h<sub>L</sub>)
+      </p>
+    </div>
+    <div class="lm" data-steps={JSON.stringify(tokens)}>
+      <p class="lm__out">
+        {
+          tokens.map((tok) => (
+            <span class:list={['tok', { 'tok--eos': tok.t === '<eos>' }]}>
+              {tok.t.startsWith('▁') ? (
+                <>
+                  <span class="tok__sp">▁</span>
+                  {tok.t.slice(1)}
+                </>
+              ) : (
+                tok.t
+              )}
+            </span>
+          ))
+        }
+        <span class="lm__caret" aria-hidden="true"></span>
+      </p>
+      <div class="lm__dist" aria-hidden="true">
+        <span class="lm__label">{nextLabel}</span>
+        {
+          rows.map(([t, p], i) => (
+            <span class:list={['lm__row', { 'is-pick': i === 0 }]}>
+              <span class="lm__tok">{t}</span>
+              <span class="lm__bar">
+                <span style={`transform:scaleX(${p})`} />
+              </span>
+              <span class="lm__p">{p.toFixed(2)}</span>
+            </span>
+          ))
+        }
+      </div>
+      <button type="button" class="lm__replay">↻ {replayLabel}</button>
+    </div>
   </div>
 </footer>

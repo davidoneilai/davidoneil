@@ -4,19 +4,20 @@ import type { LocaleCopy } from '../content/types';
 interface Props {
   label: string;
   items: LocaleCopy['ventures'];
+  id?: string;
 }
 
-const { label, items } = Astro.props;
+const { label, items, id = 'ventures' } = Astro.props;
 ---
 
-<section class="section section--paper" id="ventures">
+<section class="section section--paper" id={id}>
   <div class="wrap">
     <p class="section__label">{label}</p>
     <div class="ventures">
       {
         items.map((v) => (
           <article class="venture">
-            <h3>{v.name}</h3>
+            <h3>{v.href ? <a href={v.href} target="_blank" rel="noreferrer">{v.name}</a> : v.name}</h3>
             <p>{v.blurb}</p>
           </article>
         ))

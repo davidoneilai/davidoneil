@@ -1,5 +1,6 @@
 ---
 import type { LocaleCopy } from '../content/types';
+import BlockKicker from './BlockKicker.astro';
 
 interface Props {
   acceptedLabel: string;
@@ -13,12 +14,13 @@ const { acceptedLabel, reviewLabel, accepted, review } = Astro.props;
 
 <section class="section section--paper" id="publications">
   <div class="wrap">
+    <BlockKicker name="multi-head attention" index="02" />
     <h2>{acceptedLabel}</h2>
     <div class="pub-list">
       {
         accepted.map((p) => (
           <article class="pub">
-            <strong>{p.title}</strong>
+            <strong>{p.url ? <a href={p.url} target="_blank" rel="noreferrer">{p.title}</a> : p.title}</strong>
             <span class="venue">{p.venue}</span>
             {p.note ? <span class="note">{p.note}</span> : null}
           </article>
@@ -31,7 +33,7 @@ const { acceptedLabel, reviewLabel, accepted, review } = Astro.props;
       {
         review.map((p) => (
           <article class="pub">
-            <strong>{p.title}</strong>
+            <strong>{p.url ? <a href={p.url} target="_blank" rel="noreferrer">{p.title}</a> : p.title}</strong>
             <span class="venue">{p.venue}</span>
             {p.note ? <span class="note">{p.note}</span> : null}
           </article>

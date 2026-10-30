@@ -1,5 +1,6 @@
 ---
 import type { LocaleCopy } from '../content/types';
+import BlockKicker from './BlockKicker.astro';
 
 interface Props {
   label: string;
@@ -11,6 +12,7 @@ const { label, items } = Astro.props;
 
 <section class="section section--paper" id="experience">
   <div class="wrap">
+    <BlockKicker name="multi-head attention" index="01" />
     <p class="section__label">{label}</p>
     <ol class="timeline">
       {

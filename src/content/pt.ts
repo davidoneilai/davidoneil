@@ -2,9 +2,9 @@ import type { LocaleCopy } from './types';
 
 export const pt: LocaleCopy = {
   role: 'Engenheiro de NLP / LLM',
-  headline: 'Lead de treino de LLMs, pesquisa de interpretabilidade e NLP em produção.',
+  headline: 'Treino de LLMs, pesquisa em interpretabilidade e sistemas de NLP em produção.',
   summary:
-    'Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios da CEMIG (CEIA/UFG) e NLP Team Lead no Digital Humans II (AKCIT/EMBRAPII). Contribuidor aceito em repositórios oficiais da NVIDIA (NeMo, Megatron, Nemotron). Papers em ICLR, ICML, ACL e AACL. Em produção: RAG híbrido, Graph RAG e MLOps no TCE-GO e no TCM-GO — economia reportada de R$ 1,8 mi.',
+    'Trabalho com NLP e modelos de linguagem há mais de 4 anos. Lidero o pós-treino dos LLMs próprios da CEMIG pelo CEIA/UFG e o time de NLP do Digital Humans II (AKCIT/EMBRAPII). Tenho código aceito nos repositórios oficiais da NVIDIA (NeMo, Megatron e Nemotron) e artigos publicados no AACL, ICLR, ICML e ACL. Em produção, construí sistemas de busca jurídica, agentes e MLOps no TCE-GO e no TCM-GO, onde o projeto gerou R$ 1,8 milhão em economia reportada.',
   ctaCv: 'Baixar currículo',
   ctaWork: 'Ver o trabalho',
   ctaContact: 'Contato',
@@ -15,8 +15,8 @@ export const pt: LocaleCopy = {
   navContact: 'Contato',
   casesLabel: 'Trabalho selecionado',
   caseContextLabel: 'Contexto',
-  caseDecisionLabel: 'Decisão técnica',
-  caseLeadershipLabel: 'O que eu liderei',
+  caseDecisionLabel: 'O que construí',
+  caseLeadershipLabel: 'Meu papel',
   caseOutcomeLabel: 'Resultado',
   caseStackLabel: 'Stack',
   skillsLabel: 'Hard skills',
@@ -27,6 +27,20 @@ export const pt: LocaleCopy = {
   educationLabel: 'Formação',
   contactLabel: 'Contato',
   langLabel: 'Idioma',
+  backpropLabel: 'Disparar um passo de backpropagation',
+  backpropHint: 'clique · 1 passo',
+  nextTokenLabel: 'próximo token',
+  replayLabel: 'gerar de novo',
+  tokens: [
+    { t: '▁Memória', p: 0.41, alt: [['▁Atenção', 0.22], ['▁A', 0.14], ['▁Toda', 0.08]] },
+    { t: '▁episódica', p: 0.63, alt: [['▁longa', 0.12], ['▁de', 0.09], ['▁esparsa', 0.05]] },
+    { t: '▁nasce', p: 0.38, alt: [['▁surge', 0.27], ['▁emerge', 0.17], ['▁começa', 0.08]] },
+    { t: '▁quando', p: 0.71, alt: [['▁onde', 0.14], ['▁se', 0.06], ['▁da', 0.04]] },
+    { t: '▁a', p: 0.82, alt: [['▁o', 0.07], ['▁uma', 0.04], ['▁tudo', 0.02]] },
+    { t: '▁compressão', p: 0.47, alt: [['▁reconstrução', 0.21], ['▁atenção', 0.11], ['▁previsão', 0.09]] },
+    { t: '▁falha', p: 0.69, alt: [['▁erra', 0.12], ['▁quebra', 0.08], ['▁cede', 0.05]] },
+    { t: '<eos>', p: 0.91, alt: [['.', 0.05], ['▁e', 0.02], ['▁no', 0.01]] },
+  ],
   stats: [
     { value: '4+', label: 'anos de NLP' },
     { value: '4', label: 'papers aceitos' },
@@ -34,6 +48,10 @@ export const pt: LocaleCopy = {
     { value: 'R$ 1,8 mi', label: 'economia reportada · TCM-GO' },
   ],
   skills: [
+    {
+      cluster: 'Linguagens / infra',
+      items: ['Python', 'Go', 'C / C++', 'Java', 'R', 'JavaScript / TypeScript', 'PyTorch', 'CUDA', 'Docker', 'GCP'],
+    },
     {
       cluster: 'Pós-treino de LLM',
       items: [
@@ -81,18 +99,18 @@ export const pt: LocaleCopy = {
     {
       id: 'cemig',
       index: '01',
-      org: 'CEMIG — CEIA / UFG',
+      org: 'CEMIG · CEIA / UFG',
       title: 'LLMs próprios para o setor elétrico',
       role: 'Líder técnico · treino de modelos',
-      subtitle: 'SFT, LoRA, DPO e GRPO em Blackwell — português brasileiro e normas ANEEL.',
+      subtitle: 'SFT, LoRA, DPO e GRPO em GPUs Blackwell para português brasileiro e normas da ANEEL.',
       context:
-        'A CEMIG precisava de modelos próprios, não de um chatbot genérico. O mandato era adaptar LLMs ao português brasileiro e aos casos de uso do setor elétrico: linguagem técnica, normas reguladoras (ANEEL) e consistência factual em domínio fechado. Treino e desenvolvimento rodavam em NVIDIA Blackwell — B200, DGX H100 e A100.',
+        'A CEMIG precisava de modelos próprios treinados para o português brasileiro e para a rotina do setor elétrico, onde o modelo tem que seguir linguagem técnica e normas da ANEEL sem inventar regra. Os treinos rodavam em clusters NVIDIA com Blackwell B200, DGX H100 e A100.',
       decision:
-        'Eu definia a receita: como gerar dados sintéticos (incluindo destilação de modelos maiores para long-context e edge cases), como usar dados internos, e se a avaliação seria benchmark público (MT-Bench, Arena-Hard) ou critério nosso — exatidão factual em normas ANEEL, redução de alucinação, aderência a formato estruturado. Executei SFT, LoRA, full fine-tuning, DPO e GRPO em Qwen-3, Qwen-3.5, Gemma-4, LLaMA 3.1, LLaMA 3.2 e Tucano. Para preferência, curadoria de comparações pareadas e filtragem de recompensa. Pipelines de dados com deduplicação semântica e filtragem heurística. Stack de treino: NeMo, Megatron, Axolotl e Unsloth.',
+        'Desenhei o pipeline de dados e de pós-treino: geração de dados sintéticos por destilação de modelos maiores para cobrir contexto longo e casos raros, deduplicação semântica, filtros heurísticos e combinação com documentos internos. Rodei ciclos de SFT, LoRA, full fine-tuning, DPO e GRPO em Qwen-3, Qwen-3.5, Gemma-4, LLaMA 3.1, LLaMA 3.2 e Tucano, usando NeMo, Megatron, Axolotl e Unsloth. Para alinhamento de preferência, montei pares comparativos e filtros de recompensa focados em reduzir alucinação e manter saída estruturada. Na avaliação, juntei MT-Bench e Arena-Hard com uma bateria própria sobre normas da ANEEL.',
       leadership:
-        'Lead técnico do treino — não só executei o job. Coordenava experimentos em H100/B200: hiperparâmetros, métricas de convergência e uso de compute. O trabalho cobria os modelos, o código de treino e as aplicações em cima.',
+        'Como líder técnico da frente de treino, definia quais experimentos iam para H100 e B200, acompanhava convergência e hiperparâmetros e conectava o time de modelos ao de aplicação.',
       outcome:
-        'Modelos próprios da empresa em ciclo de pós-treino, com eval de domínio além de benchmark público. Commits e pull requests aceitos em repositórios oficiais da NVIDIA (NeMo / Megatron / Nemotron).',
+        'Modelos próprios da CEMIG em ciclo contínuo de treino e avaliação de domínio. Ao longo do projeto, correções e melhorias que fizemos no NeMo, Megatron e Nemotron foram aceitas nos repositórios oficiais da NVIDIA.',
       stack: [
         'Qwen-3 / 3.5',
         'Gemma-4',
@@ -115,18 +133,18 @@ export const pt: LocaleCopy = {
     {
       id: 'digital-humans',
       index: '02',
-      org: 'Digital Humans II — AKCIT / EMBRAPII',
+      org: 'Digital Humans II · AKCIT / EMBRAPII',
       title: 'Interpretabilidade e alinhamento de persona',
       role: 'NLP Team Lead · pesquisa',
-      subtitle: 'SAEs, steering, memória episódica — papers em ICLR, ICML, ACL e AACL.',
+      subtitle: 'Sparse Autoencoders, steering e memória episódica, com papers no AACL, ICLR, ICML e ACL.',
       context:
-        'Mandato de pesquisa de base, não de produto. O time de NLP precisava de liderança técnica com gente reportando: treino de modelos, interpretabilidade e publicações. O foco era alinhamento de persona (educação e fluxos de pesquisa), memória em agentes e adaptação eficiente — não engenharia de feature.',
+        'Frente de pesquisa do AKCIT dedicada a entender e controlar o comportamento interno de LLMs: manter uma persona estável ao longo da conversa, dar memória episódica a agentes e adaptar modelos sem retreinar tudo.',
       decision:
-        'Minha faixa: Sparse Autoencoders, steering, alinhamento de persona, memória episódica em LLMs e Steering-Conditioned LoRA. Também aceleração de inferência e controle de memória. Definia objetivos de treino, curadoria e geração de datasets, e evals para comportamento consistente com a persona — além de SFT quando o alinhamento pedia receita mais forte.',
+        'Trabalhamos com Sparse Autoencoders e vetores de steering no espaço latente, combinando controle de representação com LoRA (Steering-Conditioned LoRA) e com prompting (ECHO). Na frente de memória, usamos fronteiras de compressão na representação latente para segmentar episódios em agentes de longo contexto. Também cuidei da geração de datasets, dos objetivos de treino e das avaliações de consistência de persona.',
       leadership:
-        'Líder técnico do time de NLP, com pessoas abaixo de mim. Fechei o ciclo pesquisa → treino → paper: a equipe publicou em interpretabilidade, memória e fine-tuning eficiente para aplicação real.',
+        'Lidero o time de NLP do projeto, orientando pesquisadores do desenho do experimento e treino até a escrita do artigo.',
       outcome:
-        'Quatro papers aceitos: AACL-IJCNLP 2026 (main), ICLR 2026 MemAgents (oral), ICML 2026 CoLoRAI (pôster) e ACL 2026 SemEval. ECHO em revisão no ACL ARR, destino EACL.',
+        'Quatro artigos aceitos em 2026: trilha principal do AACL-IJCNLP, apresentação oral no workshop MemAgents do ICLR, pôster no CoLoRAI do ICML e paper no SemEval da ACL. Um quinto artigo, ECHO, está em revisão no ACL ARR para o EACL.',
       stack: [
         'Sparse Autoencoders',
         'Steering',
@@ -147,15 +165,15 @@ export const pt: LocaleCopy = {
       org: 'TCE-GO e TCM-GO',
       title: 'NLP jurídico em produção',
       role: 'NLP Engineer',
-      subtitle: 'Medallion, SFT de encoder, Graph RAG e RAG híbrido sobre bases de tribunais de contas.',
+      subtitle: 'Arquitetura Medallion, fine-tuning de encoders, Graph RAG e busca híbrida nos tribunais de contas.',
       context:
-        'Bases extensas e ruidosas de tribunais de contas. A busca só semântica falhava em documento jurídico complementar — número de processo, metadado e citação lexical precisavam cair na mesma resposta que o sentido. O produto tinha de viver na infra institucional, não em notebook.',
+        'Os acórdãos e processos dos tribunais de contas misturam texto longo, número de processo, relator e citações cruzadas. Busca puramente semântica errava quando o usuário pedia um número exato ou precisava juntar dois documentos complementares, e tudo precisava rodar na infraestrutura própria de cada tribunal.',
       decision:
-        'No TCE-GO: retriever híbrido (lexical + denso) para documentos que exigiam contexto cruzado; regex para metadados na query quando a busca semântica era imprecisa; SFT de encoders (E5, BGE-M3, Qwen Embedding) com triplet / contrastive loss e dados sintéticos; Graph RAG e agentes misturando BM25, metadados e recuperação densa. No TCM-GO: Medallion, MLOps na infra do tribunal, RAG jurídico e fine-tuning de seções de documento.',
+        'No TCE-GO, combinei busca lexical (BM25) e densa num retriever híbrido, com regras em regex para extrair metadados da pergunta e filtrar o banco antes do rerank. Afinei encoders (E5, BGE-M3 e Qwen Embedding) com perda contrastiva e triplet loss em pares jurídicos, e montei um Graph RAG com agentes para consultas que dependiam de vários documentos. No TCM-GO, estruturei os dados em arquitetura Medallion, cuidei do MLOps local e treinei modelos para redigir e analisar seções específicas de peças jurídicas.',
       leadership:
-        'Donos do ciclo até o deploy: chat, sumarização e QA em produção, seleção de modelos por eval — não só prototipação. No TCM, o chat/NLP foi medido em economia operacional.',
+        'Toquei os projetos do treino e avaliação de modelos até o deploy e manutenção dos serviços de chat, sumarização e perguntas e respostas.',
       outcome:
-        'TCM-GO: aplicação de chat/NLP com economia reportada de R$ 1,8 mi. TCE-GO: RAG híbrido, metadados via regex, chat, sumarização e QA no ambiente operacional.',
+        'No TCM-GO, o sistema de chat e análise documental entrou em produção com economia operacional reportada de R$ 1,8 milhão. No TCE-GO, a busca híbrida e os assistentes de sumarização e QA passaram a atender o corpo técnico no dia a dia.',
       stack: [
         'E5',
         'BGE-M3',
@@ -175,18 +193,18 @@ export const pt: LocaleCopy = {
     {
       id: 'tron',
       index: '04',
-      org: 'TRON — CEIA',
+      org: 'TRON · CEIA',
       title: 'Copilot em Delphi legado',
       role: 'Tech Lead & NLP Engineer',
-      subtitle: 'Graph RAG multiagente, ações no app legado e SFT do BGE-M3.',
+      subtitle: 'Graph RAG multiagente, execução de ações no sistema legado e fine-tuning do BGE-M3.',
       context:
-        'A TRON precisava de um copilot de atendimento que não ficasse numa aba à parte. O sistema crítico era Delphi legado: o agente tinha de executar ações dentro da aplicação, e os atendentes precisavam de uma extensão web para tirar dúvida interna sem quebrar o fluxo.',
+        'O sistema principal da TRON era um ERP legado em Delphi, e o time de suporte perdia tempo alternando entre telas e manuais. O copilot precisava agir dentro do próprio Delphi e também ficar disponível numa extensão web para os atendentes tirarem dúvidas rápidas.',
       decision:
-        'Graph RAG com nós especializados — query rewrite e rerank — para precisão e contexto. Copilot agêntico no Delphi para ações diretas a partir do comando do usuário. Extensão web para o atendente conversar com a pipeline. SFT do BGE-M3 com triplet loss e hard-negative mining para subir a recuperação semântica.',
+        'Estruturei um Graph RAG com agentes dedicados a reescrever a pergunta e reordenar os trechos recuperados. Fiz o fine-tuning do BGE-M3 com triplet loss e mineração de hard negatives no vocabulário do sistema, o que subiu bem a precisão da busca. Na ponta final, integrei o agente ao Delphi para disparar ações direto do comando do usuário e entreguei a extensão web para o time de atendimento.',
       leadership:
-        'Tech lead do projeto CEIA×TRON: arquitetura, treino do encoder e integração no legado. Coordenei o desenvolvimento do ambiente conversacional ponta a ponta.',
+        'Como tech lead da parceria CEIA e TRON, coordenei a arquitetura do grafo, o treino do retriever e a integração com o software legado.',
       outcome:
-        'Copilot em produção no fluxo de atendimento: recuperação melhor com BGE-M3 afinado, ações no Delphi e ferramenta web para o time humano.',
+        'Copilot em uso pela operação de suporte, executando ações no Delphi e respondendo dúvidas internas pela extensão com o BGE-M3 afinado.',
       stack: ['Graph RAG', 'Query rewrite', 'Rerank', 'Delphi', 'BGE-M3', 'Triplet loss', 'Hard-negative mining'],
       metrics: [
         { value: 'Lead', label: 'copilot CEIA × TRON' },
@@ -198,39 +216,39 @@ export const pt: LocaleCopy = {
   experience: [
     {
       title: 'NLP Team Lead · pesquisa',
-      org: 'Digital Humans II — AKCIT / EMBRAPII',
-      summary: 'Time de NLP com reports. Interpretabilidade, persona, memória episódica — papers em ICLR, ICML, ACL e AACL.',
+      org: 'Digital Humans II · AKCIT / EMBRAPII',
+      summary: 'Lidero o time de NLP em pesquisa de interpretabilidade, alinhamento de persona e memória episódica, com papers aceitos no AACL, ICLR, ICML e ACL.',
       href: '#case-digital-humans',
     },
     {
       title: 'Líder técnico · treino de modelos',
-      org: 'CEMIG — CEIA / UFG',
-      summary: 'Lead do pós-treino dos LLMs próprios: SFT, LoRA, DPO, GRPO em Blackwell. PRs na NVIDIA.',
+      org: 'CEMIG · CEIA / UFG',
+      summary: 'Responsável pelo pós-treino dos LLMs próprios da CEMIG (SFT, LoRA, DPO e GRPO em GPUs Blackwell) e autor de PRs aceitos na NVIDIA.',
       href: '#case-cemig',
     },
     {
       title: 'Tech Lead & NLP Engineer',
-      org: 'TRON — CEIA',
-      summary: 'Copilot Graph RAG no Delphi legado, extensão web para atendentes, SFT do BGE-M3.',
+      org: 'TRON · CEIA',
+      summary: 'Liderança técnica do copilot com Graph RAG integrado ao Delphi legado, extensão web para o suporte e fine-tuning do BGE-M3.',
       href: '#case-tron',
     },
     {
       title: 'NLP Engineer',
-      org: 'TCE-GO — Tribunal de Contas do Estado de Goiás',
-      summary: 'RAG híbrido jurídico, SFT de encoders, Graph RAG e QA em produção.',
+      org: 'TCE-GO · Tribunal de Contas do Estado de Goiás',
+      summary: 'Busca híbrida sobre documentos jurídicos, fine-tuning de encoders, Graph RAG e sistemas de QA em produção.',
       href: '#case-courts',
     },
     {
       title: 'NLP Engineer',
-      org: 'TCM-GO — Tribunal de Contas dos Municípios de Goiás',
-      summary: 'Chat/NLP com economia reportada de R$ 1,8 mi. Medallion, MLOps, RAG jurídico.',
+      org: 'TCM-GO · Tribunal de Contas dos Municípios de Goiás',
+      summary: 'Sistema de chat e RAG jurídico em produção, com arquitetura Medallion, MLOps e R$ 1,8 mi em economia reportada.',
       href: '#case-courts',
     },
     {
       title: 'CEO & Co-Founder',
       org: 'Pergunt.ai',
       period: '2023',
-      summary: 'Edtech GenAI: questões inéditas de concurso e recomendação no desempenho do aluno.',
+      summary: 'Edtech que usava IA generativa para criar questões inéditas de concursos e recomendar estudo pelo desempenho do aluno.',
       href: '#ventures',
     },
   ],
@@ -238,53 +256,90 @@ export const pt: LocaleCopy = {
     {
       title: 'Bacharelado em Inteligência Artificial',
       org: 'Universidade Federal de Goiás (UFG)',
-      period: '2023 — 2027',
-      note: 'Primeiro curso de IA da América Latina. Cursando.',
+      period: '2023 a 2027',
+      note: 'Primeira graduação em Inteligência Artificial da América Latina. Em andamento.',
     },
   ],
   publicationsAccepted: [
     {
       title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
       venue: 'AACL-IJCNLP 2026 Main',
-      note: 'Versão de conferência (trilha principal) do trabalho de memória episódica.',
+      note: 'Artigo completo na trilha principal da conferência sobre como fronteiras de compressão no espaço latente formam memória episódica.',
+      url: 'https://openreview.net/forum?id=31kwKm65KV',
     },
     {
       title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
       venue: 'ICLR 2026 · MemAgents Workshop (Oral)',
-      note: 'Memória episódica, limites de compressão e representação latente em agentes de LLM.',
+      note: 'Versão de workshop selecionada para apresentação oral sobre memória episódica em agentes baseados em LLMs.',
+      url: 'https://openreview.net/forum?id=En9aRT4uz8',
     },
     {
       title: 'Steering-Conditioned LoRA via Sparse Autoencoders',
       venue: 'ICML 2026 · CoLoRAI Workshop (Pôster)',
-      note: 'Pós-treino eficiente (LoRA) composto com sparse autoencoders para steering condicionado.',
+      note: 'Combina adaptadores LoRA com features extraídas por Sparse Autoencoders para guiar o comportamento do modelo durante o pós-treino.',
+      url: 'https://openreview.net/forum?id=8ovluzEutL',
     },
     {
       title:
         'AKCIT-UFG at SemEval-2026 Task 8: Structured Chunking and Optimized Query Reformulation for Efficient Multi-Turn Retrieval',
       venue: 'ACL 2026 · SemEval Workshop',
-      note: 'Chunking estruturado e reformulação de query para recuperação multi-turno.',
+      note: 'Segmentação estruturada de documentos e reformulação de perguntas para melhorar a busca em diálogos de vários turnos.',
     },
   ],
   publicationsReview: [
     {
       title: 'ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation',
       venue: 'ACL ARR 2026 August · EACL · em revisão',
-      note: 'Eixo latente de registro composto com prompting para geração condicionada à persona.',
+      note: 'Mostra como um eixo latente de registro se soma ao prompt para manter a persona estável na geração de texto.',
+      url: 'https://openreview.net/forum?id=Bv3PbQSjxU',
+    },
+  ],
+  openSourceLabel: 'Open source · modelos e código',
+  openSource: [
+    {
+      name: 'bge-m3-ft-corpus-pt',
+      blurb: 'BGE-M3 ajustado para busca semântica em português, com versão exportada em ONNX para inferência rápida. É o modelo mais baixado do meu Hugging Face.',
+      href: 'https://huggingface.co/davidoneil/bge-m3-ft-corpus-pt',
+    },
+    {
+      name: 'decisoes-processos-tce-ft-gemma',
+      blurb: 'Modelo de embeddings baseado em Gemma e treinado sobre decisões e processos do TCE-GO para recuperação jurídica.',
+      href: 'https://huggingface.co/davidoneil/decisoes-processos-tce-ft-gemma',
+    },
+    {
+      name: 'bge-full-tron',
+      blurb: 'BGE-M3 treinado com triplet loss e hard negatives para o vocabulário interno da TRON, usado como retriever do copilot de suporte.',
+      href: 'https://huggingface.co/davidoneil/bge-full-tron',
+    },
+    {
+      name: 'sae-llama32-3b',
+      blurb: 'Pesos públicos de Sparse Autoencoders treinados no LLaMA 3.2 3B, acompanhados dos SAEs por camada usados nos experimentos de persona e steering.',
+      href: 'https://huggingface.co/davidoneil/sae-llama32-3b',
+    },
+    {
+      name: 'dense-SAE-latent',
+      blurb: 'Código em PyTorch para treinar e inspecionar Sparse Autoencoders sobre ativações internas de LLMs.',
+      href: 'https://github.com/davidoneilai/dense-SAE-latent',
+    },
+    {
+      name: 'residencia-tcc',
+      blurb: 'Inferência adaptativa de modelos pequenos no iPhone (MobileLLMBench) e avaliação de chamada de ferramentas no benchmark BFCL v4.',
+      href: 'https://github.com/davidoneilai/residencia-tcc',
     },
   ],
   ventures: [
     {
       name: 'Pergunt.ai',
-      blurb: 'Edtech GenAI para questões personalizadas de concursos e insights de aprendizado.',
+      blurb: 'Plataforma de estudo que gerava questões inéditas de concurso com IA e ajustava a trilha conforme os erros de cada aluno.',
     },
     {
       name: 'Validoo',
       blurb:
-        'SaaS de conformidade para transporte rodoviário — fluxos regulatórios para transportadoras, despachantes e motoristas.',
+        'SaaS de conformidade regulatória no transporte rodoviário, feito para organizar documentos e exigências entre transportadoras, despachantes e motoristas.',
     },
     {
       name: 'PUMP',
-      blurb: 'Produto iOS de foto: looks Core ML on-device + IA generativa, construído ponta a ponta.',
+      blurb: 'Aplicativo iOS de fotografia que combina modelos Core ML rodando no próprio aparelho com recursos de IA generativa.',
     },
   ],
 };

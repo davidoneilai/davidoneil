@@ -1,5 +1,6 @@
 ---
 import type { LocaleCopy } from '../content/types';
+import BlockKicker from './BlockKicker.astro';
 
 interface Props {
   copy: LocaleCopy;
@@ -10,6 +11,7 @@ const { copy } = Astro.props;
 
 <section class="section" id="cases">
   <div class="wrap">
+    <BlockKicker name="feed-forward" index="01" />
     <p class="section__label">{copy.casesLabel}</p>
     <div class="cases">
       {

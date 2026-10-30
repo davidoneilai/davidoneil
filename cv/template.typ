@@ -3,6 +3,7 @@
   name: "",
   role: "",
   contacts: (),
+  links: (),
   summary: "",
   experience: (),
   education: (),
@@ -20,18 +21,18 @@
 ) = {
   set page(
     paper: "a4",
-    margin: (top: 1.35cm, bottom: 1.35cm, left: 1.45cm, right: 1.45cm),
+    margin: (top: 0.95cm, bottom: 0.95cm, left: 1.3cm, right: 1.3cm),
   )
   set text(
-    font: (font-latin, font-cjk),
-    size: 9.2pt,
+    font: (font-latin, "Arial", font-cjk, "Microsoft YaHei"),
+    size: 8.8pt,
     fill: rgb("#121820"),
     lang: lang,
   )
-  set par(leading: 0.42em, spacing: 0.55em, justify: true)
+  set par(leading: 0.4em, spacing: 0.5em, justify: true)
 
   let section(title) = {
-    v(0.55em)
+    v(0.45em)
     block(
       width: 100%,
       stroke: (bottom: 0.7pt + rgb("#0c1e36")),
@@ -48,11 +49,16 @@
   }
 
   align(center)[
+    #set par(justify: false)
     #text(size: 20pt, weight: "bold", fill: rgb("#0c1e36"), name)
     #v(0.15em)
     #text(size: 10pt, fill: rgb("#1a4a8a"), role)
     #v(0.35em)
-    #text(size: 8.2pt, fill: rgb("#4a5563"), contacts.join("  ·  "))
+    #text(size: 8.2pt, fill: rgb("#4a5563"), contacts.map(box).join("  ·  "))
+    #if links.len() > 0 [
+      #linebreak()
+      #text(size: 8.2pt, fill: rgb("#1a4a8a"), links.map(box).join("  ·  "))
+    ]
   ]
 
   v(0.55em)
@@ -60,7 +66,7 @@
 
   section(labels.experience)
   for job in experience {
-    block(breakable: false, spacing: 0.7em)[
+    block(breakable: false, spacing: 0.58em)[
       #grid(
         columns: (1fr, auto),
         text(weight: "bold", size: 9.6pt, fill: rgb("#0c1e36"), job.title),
@@ -99,7 +105,7 @@
   section(labels.publications)
   for p in publications {
     block(spacing: 0.45em)[
-      #text(weight: "bold", size: 8.8pt, p.title)
+      #text(weight: "bold", size: 8.8pt, hyphenate: false, if "url" in p { link(p.url, p.title) } else { p.title })
       #linebreak()
       #text(size: 8.2pt, fill: rgb("#1a4a8a"), p.venue)
     ]

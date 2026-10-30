@@ -12,7 +12,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "cv": "typst compile cv/en.typ public/cv-en.pdf && typst compile cv/zh.typ public/cv-zh.pdf"
+    "cv": "typst compile cv/pt.typ public/cv-pt.pdf && typst compile cv/en.typ public/cv-en.pdf && typst compile cv/zh.typ public/cv-zh.pdf"
   },
   "dependencies": {
     "astro": "^7.2.2",

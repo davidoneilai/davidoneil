@@ -7,5 +7,6 @@ export const profile: Profile = {
   location: 'Goiânia, Brazil',
   linkedin: 'https://linkedin.com/in/davidoneilai',
   github: 'https://github.com/davidoneilai',
+  huggingface: 'https://huggingface.co/davidoneil',
   photo: 'david.png',
 };

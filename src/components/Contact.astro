@@ -21,6 +21,9 @@ const tel = profile.phone.replace(/\s/g, '');
       {profile.github ? (
         <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
       ) : null}
+      {profile.huggingface ? (
+        <a href={profile.huggingface} target="_blank" rel="noreferrer">Hugging Face</a>
+      ) : null}
       <span>{profile.location}</span>
       <a href={cvHref} download>{copy.ctaCv}</a>
     </div>

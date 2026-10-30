@@ -27,6 +27,17 @@ export const zh: LocaleCopy = {
   educationLabel: '教育',
   contactLabel: '联系',
   langLabel: '语言',
+  backpropLabel: '触发一次反向传播',
+  backpropHint: '点击 · 单步',
+  nextTokenLabel: '下一个 token',
+  replayLabel: '重新生成',
+  tokens: [
+    { t: '情景记忆', p: 0.52, alt: [['长期记忆', 0.21], ['注意力', 0.1], ['稀疏', 0.06]] },
+    { t: '始于', p: 0.44, alt: [['源于', 0.25], ['来自', 0.13], ['出现在', 0.07]] },
+    { t: '压缩', p: 0.58, alt: [['重建', 0.2], ['预测', 0.1], ['注意力', 0.05]] },
+    { t: '失败', p: 0.66, alt: [['失效', 0.15], ['中断', 0.07], ['之处', 0.05]] },
+    { t: '<eos>', p: 0.9, alt: [['。', 0.06], ['时', 0.02], ['的', 0.01]] },
+  ],
   stats: [
     { value: '4+', label: '年 NLP' },
     { value: '4', label: '已接收论文' },
@@ -34,6 +45,10 @@ export const zh: LocaleCopy = {
     { value: 'R$180 万', label: '据报节省 · TCM-GO' },
   ],
   skills: [
+    {
+      cluster: '语言 / 基础设施',
+      items: ['Python', 'Go', 'C / C++', 'Java', 'R', 'JavaScript / TypeScript', 'PyTorch', 'CUDA', 'Docker', 'GCP'],
+    },
     {
       cluster: 'LLM 后训练',
       items: [
@@ -247,16 +262,19 @@ export const zh: LocaleCopy = {
       title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
       venue: 'AACL-IJCNLP 2026 Main',
       note: '情景记忆工作的会议版本（主会）。',
+      url: 'https://openreview.net/forum?id=31kwKm65KV',
     },
     {
       title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
       venue: 'ICLR 2026 · MemAgents Workshop（口头）',
       note: 'LLM 智能体中的情景记忆、压缩边界与潜在表示。',
+      url: 'https://openreview.net/forum?id=En9aRT4uz8',
     },
     {
       title: 'Steering-Conditioned LoRA via Sparse Autoencoders',
       venue: 'ICML 2026 · CoLoRAI Workshop（海报）',
       note: '将高效后训练（LoRA）与 sparse autoencoders 组合，用于条件化 steering。',
+      url: 'https://openreview.net/forum?id=8ovluzEutL',
     },
     {
       title:
@@ -270,6 +288,40 @@ export const zh: LocaleCopy = {
       title: 'ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation',
       venue: 'ACL ARR 2026 August · EACL · 审稿中',
       note: '潜在语域轴与 prompting 组合，用于人设条件生成。',
+      url: 'https://openreview.net/forum?id=Bv3PbQSjxU',
+    },
+  ],
+  openSourceLabel: '开源 · 模型与代码',
+  openSource: [
+    {
+      name: 'bge-m3-ft-corpus-pt',
+      blurb: '面向葡萄牙语检索微调的 BGE-M3，附 ONNX 推理版本。主页下载量最高的模型。',
+      href: 'https://huggingface.co/davidoneil/bge-m3-ft-corpus-pt',
+    },
+    {
+      name: 'decisoes-processos-tce-ft-gemma',
+      blurb: '基于 Gemma 的嵌入模型，在 TCE-GO 裁决上微调，用于法律检索。',
+      href: 'https://huggingface.co/davidoneil/decisoes-processos-tce-ft-gemma',
+    },
+    {
+      name: 'bge-full-tron',
+      blurb: '用 triplet loss 与难负例训练的 BGE-M3——TRON 客服副驾驶背后的检索器。',
+      href: 'https://huggingface.co/davidoneil/bge-full-tron',
+    },
+    {
+      name: 'sae-llama32-3b',
+      blurb: '在 LLaMA 3.2 3B 上训练的 Sparse Autoencoders，另有逐层人设 SAE——来自 steering 研究线。',
+      href: 'https://huggingface.co/davidoneil/sae-llama32-3b',
+    },
+    {
+      name: 'dense-SAE-latent',
+      blurb: '用 PyTorch 实现的稠密 SAE，用于解释 LLM 的潜在表示。',
+      href: 'https://github.com/davidoneilai/dense-SAE-latent',
+    },
+    {
+      name: 'residencia-tcc',
+      blurb: 'iPhone 上 SLM 的自适应推理（MobileLLMBench）及 BFCL v4 工具调用评测。',
+      href: 'https://github.com/davidoneilai/residencia-tcc',
     },
   ],
   ventures: [

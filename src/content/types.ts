@@ -7,6 +7,7 @@ export interface Profile {
   location: string;
   linkedin: string;
   github?: string;
+  huggingface?: string;
   photo: string;
 }
 
@@ -36,6 +37,11 @@ export interface LocaleCopy {
   educationLabel: string;
   contactLabel: string;
   langLabel: string;
+  backpropLabel: string;
+  backpropHint: string;
+  nextTokenLabel: string;
+  replayLabel: string;
+  tokens: { t: string; p: number; alt: [string, number][] }[];
   stats: { value: string; label: string }[];
   skills: { cluster: string; items: string[] }[];
   cases: {
@@ -69,14 +75,19 @@ export interface LocaleCopy {
     title: string;
     venue: string;
     note?: string;
+    url?: string;
   }[];
   publicationsReview: {
     title: string;
     venue: string;
     note?: string;
+    url?: string;
   }[];
   ventures: {
     name: string;
     blurb: string;
+    href?: string;
   }[];
+  openSourceLabel: string;
+  openSource: LocaleCopy['ventures'];
 }

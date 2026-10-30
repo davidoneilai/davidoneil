@@ -1,6 +1,8 @@
 ---
 import type { LocaleCopy } from '../content/types';
 import { profile } from '../content/profile';
+import BlockKicker from './BlockKicker.astro';
+import ResidualNet from './ResidualNet.astro';
 
 interface Props {
   copy: LocaleCopy;
@@ -13,6 +15,7 @@ const { copy, cvHref, photoSrc } = Astro.props;
 
 <section class="hero">
   <div class="wrap hero__grid">
+    <BlockKicker name="embeddings" current />
     <div>
       <p class="eyebrow hero-anim">{copy.role}</p>
       <h1 class="hero-anim">{profile.name}</h1>
@@ -45,6 +48,7 @@ const { copy, cvHref, photoSrc } = Astro.props;
           ))
         }
       </div>
+      <ResidualNet label={copy.backpropLabel} hint={copy.backpropHint} />
     </aside>
   </div>
 </section>
