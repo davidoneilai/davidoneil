@@ -62,6 +62,14 @@
       ),
     ),
     (
+      title: "助教 · NLP",
+      org: "戈亚斯联邦大学（UFG）· Arlindo Galvão 教授",
+      period: "2026/2",
+      bullets: (
+        [担任自然语言处理课程助教，课程由 Arlindo Galvão 教授主讲。],
+      ),
+    ),
+    (
       title: "CEO & 联合创始人",
       org: "Pergunt.ai",
       period: "2023",

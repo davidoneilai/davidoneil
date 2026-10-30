@@ -16,6 +16,7 @@ Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios
 - **Tech Lead & NLP Engineer · TRON (CEIA)** — Copilot Graph RAG no Delphi legado, extensão web para atendentes, SFT do BGE-M3.
 - **NLP Engineer · TCE-GO** — RAG híbrido jurídico, SFT de encoders, Graph RAG e QA em produção.
 - **NLP Engineer · TCM-GO** — Chat/NLP com economia reportada de R$ 1,8 mi. Medallion, MLOps, RAG jurídico.
+- **Professor auxiliar · NLP · UFG (2026/2)** — Disciplina de Processamento de Linguagem Natural, com o professor Arlindo Galvão.
 - **CEO & Co-Founder · Pergunt.ai (2023)** — Edtech GenAI: questões inéditas de concurso e recomendação no desempenho do aluno.
 
 ### Publicações
@@ -45,6 +46,7 @@ NLP/LLM engineer with 4+ years. Technical lead for training **CEMIG**’s in-hou
 - **Tech Lead & NLP Engineer · TRON (CEIA)** — Graph RAG copilot in legacy Delphi, web extension for attendants, BGE-M3 SFT.
 - **NLP Engineer · TCE-GO** — Hybrid legal RAG, encoder SFT, Graph RAG, and production QA.
 - **NLP Engineer · TCM-GO** — Chat/NLP with reported R$1.8M savings. Medallion, MLOps, legal RAG.
+- **Teaching Assistant · NLP · UFG (2026/2)** — Natural Language Processing course, with Professor Arlindo Galvão.
 - **CEO & Co-Founder · Pergunt.ai (2023)** — Edtech GenAI: original public-exam questions and a recommendation layer on student performance.
 
 ### Publications
@@ -74,6 +76,7 @@ NLP/LLM 工程师，4+ 年经验。**CEMIG**（CEIA/UFG）自有模型训练技�
 - **Tech Lead & NLP Engineer · TRON（CEIA）** — 遗留 Delphi 中的 Graph RAG 副驾驶、坐席 Web 扩展、BGE-M3 SFT。
 - **NLP Engineer · TCE-GO** — 混合法律 RAG、编码器 SFT、Graph RAG 与生产问答。
 - **NLP Engineer · TCM-GO** — 聊天/NLP 据报节省 R$180 万。Medallion、MLOps、法律 RAG。
+- **助教 · NLP · UFG（2026/2）** — 自然语言处理课程，由 Arlindo Galvão 教授主讲。
 - **CEO & 联合创始人 · Pergunt.ai（2023）** — 教育 GenAI：原创公考题，并对学情做推荐。
 
 ### 论文

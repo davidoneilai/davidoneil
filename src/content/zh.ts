@@ -242,6 +242,12 @@ export const zh: LocaleCopy = {
       href: '#case-courts',
     },
     {
+      title: '助教 · NLP',
+      org: 'UFG · Arlindo Galvão 教授',
+      period: '2026/2',
+      summary: '担任自然语言处理课程助教，课程由 Arlindo Galvão 教授主讲。',
+    },
+    {
       title: 'CEO & 联合创始人',
       org: 'Pergunt.ai',
       period: '2023',

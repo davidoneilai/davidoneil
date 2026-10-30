@@ -244,6 +244,12 @@ export const en: LocaleCopy = {
       href: '#case-courts',
     },
     {
+      title: 'Teaching Assistant · NLP',
+      org: 'UFG · Prof. Arlindo Galvão',
+      period: '2026/2',
+      summary: 'Teaching assistant for the Natural Language Processing course, with Professor Arlindo Galvão.',
+    },
+    {
       title: 'CEO & Co-Founder',
       org: 'Pergunt.ai',
       period: '2023',
