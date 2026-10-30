@@ -4,7 +4,7 @@ export const pt: LocaleCopy = {
   role: 'Engenheiro de NLP / LLM',
   headline: 'Lead de treino de LLMs, pesquisa de interpretabilidade e NLP em produção.',
   summary:
-    'Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios da CEMIG (CEIA/UFG) e NLP Team Lead no Digital Humans II (AKCIT/EMBRAPII). Contribuidor aceito em repositórios oficiais da NVIDIA (NeMo, Megatron, Nemotron). Papers em ICLR, ICML e ACL. Em produção: RAG híbrido, Graph RAG e MLOps no TCE-GO e no TCM-GO — economia reportada de R$ 1,8 mi.',
+    'Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios da CEMIG (CEIA/UFG) e NLP Team Lead no Digital Humans II (AKCIT/EMBRAPII). Contribuidor aceito em repositórios oficiais da NVIDIA (NeMo, Megatron, Nemotron). Papers em ICLR, ICML, ACL e AACL. Em produção: RAG híbrido, Graph RAG e MLOps no TCE-GO e no TCM-GO — economia reportada de R$ 1,8 mi.',
   ctaCv: 'Baixar currículo',
   ctaWork: 'Ver o trabalho',
   ctaContact: 'Contato',
@@ -29,7 +29,7 @@ export const pt: LocaleCopy = {
   langLabel: 'Idioma',
   stats: [
     { value: '4+', label: 'anos de NLP' },
-    { value: '3', label: 'papers aceitos' },
+    { value: '4', label: 'papers aceitos' },
     { value: 'B200', label: 'Blackwell · H100 · A100' },
     { value: 'R$ 1,8 mi', label: 'economia reportada · TCM-GO' },
   ],
@@ -118,7 +118,7 @@ export const pt: LocaleCopy = {
       org: 'Digital Humans II — AKCIT / EMBRAPII',
       title: 'Interpretabilidade e alinhamento de persona',
       role: 'NLP Team Lead · pesquisa',
-      subtitle: 'SAEs, steering, memória episódica — papers em ICLR, ICML e ACL.',
+      subtitle: 'SAEs, steering, memória episódica — papers em ICLR, ICML, ACL e AACL.',
       context:
         'Mandato de pesquisa de base, não de produto. O time de NLP precisava de liderança técnica com gente reportando: treino de modelos, interpretabilidade e publicações. O foco era alinhamento de persona (educação e fluxos de pesquisa), memória em agentes e adaptação eficiente — não engenharia de feature.',
       decision:
@@ -126,7 +126,7 @@ export const pt: LocaleCopy = {
       leadership:
         'Líder técnico do time de NLP, com pessoas abaixo de mim. Fechei o ciclo pesquisa → treino → paper: a equipe publicou em interpretabilidade, memória e fine-tuning eficiente para aplicação real.',
       outcome:
-        'Três papers aceitos: ICLR 2026 MemAgents (oral), ICML 2026 CoLoRAI (pôster) e ACL 2026 SemEval. Dois manuscritos em revisão em venues top-tier (ACL ARR, AACL-IJCNLP).',
+        'Quatro papers aceitos: AACL-IJCNLP 2026 (main), ICLR 2026 MemAgents (oral), ICML 2026 CoLoRAI (pôster) e ACL 2026 SemEval. ECHO em revisão no ACL ARR, destino EACL.',
       stack: [
         'Sparse Autoencoders',
         'Steering',
@@ -136,9 +136,9 @@ export const pt: LocaleCopy = {
         'Inference acceleration',
       ],
       metrics: [
-        { value: '3', label: 'papers aceitos' },
-        { value: 'Oral', label: 'ICLR MemAgents' },
-        { value: '2', label: 'manuscritos em revisão' },
+        { value: '4', label: 'papers aceitos' },
+        { value: 'Main', label: 'AACL-IJCNLP' },
+        { value: '1', label: 'em revisão · EACL' },
       ],
     },
     {
@@ -199,7 +199,7 @@ export const pt: LocaleCopy = {
     {
       title: 'NLP Team Lead · pesquisa',
       org: 'Digital Humans II — AKCIT / EMBRAPII',
-      summary: 'Time de NLP com reports. Interpretabilidade, persona, memória episódica — papers em ICLR, ICML e ACL.',
+      summary: 'Time de NLP com reports. Interpretabilidade, persona, memória episódica — papers em ICLR, ICML, ACL e AACL.',
       href: '#case-digital-humans',
     },
     {
@@ -245,6 +245,11 @@ export const pt: LocaleCopy = {
   publicationsAccepted: [
     {
       title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
+      venue: 'AACL-IJCNLP 2026 Main',
+      note: 'Versão de conferência (trilha principal) do trabalho de memória episódica.',
+    },
+    {
+      title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
       venue: 'ICLR 2026 · MemAgents Workshop (Oral)',
       note: 'Memória episódica, limites de compressão e representação latente em agentes de LLM.',
     },
@@ -263,13 +268,8 @@ export const pt: LocaleCopy = {
   publicationsReview: [
     {
       title: 'ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation',
-      venue: 'ACL ARR 2026 August · em revisão',
+      venue: 'ACL ARR 2026 August · EACL · em revisão',
       note: 'Eixo latente de registro composto com prompting para geração condicionada à persona.',
-    },
-    {
-      title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
-      venue: 'AACL-IJCNLP 2026 · em revisão',
-      note: 'Versão de conferência do trabalho de memória episódica apresentado no ICLR MemAgents.',
     },
   ],
   ventures: [

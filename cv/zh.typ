@@ -11,7 +11,7 @@
     "github.com/davidoneilai",
   ),
   summary: [
-    NLP/LLM 工程师，4+ 年经验。CEMIG（CEIA/UFG）自有模型训练技术负责人，Digital Humans II（AKCIT/EMBRAPII）NLP Team Lead。官方 NVIDIA 仓库已接受贡献（NeMo、Megatron、Nemotron）。论文见于 ICLR、ICML、ACL。在 TCE-GO 与 TCM-GO 交付生产 NLP：混合 RAG、Graph RAG、MLOps；TCM-GO 据报节省 R\$180 万。
+    NLP/LLM 工程师，4+ 年经验。CEMIG（CEIA/UFG）自有模型训练技术负责人，Digital Humans II（AKCIT/EMBRAPII）NLP Team Lead。官方 NVIDIA 仓库已接受贡献（NeMo、Megatron、Nemotron）。论文见于 ICLR、ICML、ACL、AACL。在 TCE-GO 与 TCM-GO 交付生产 NLP：混合 RAG、Graph RAG、MLOps；TCM-GO 据报节省 R\$180 万。
   ],
   experience: (
     (
@@ -21,7 +21,7 @@
       bullets: (
         [领导 NLP 团队（有直接下属）。任务是基础研究与发表——可解释性、人设对齐、情景记忆——不是产品工程。],
         [研究方向：Sparse Autoencoders、steering、Steering-Conditioned LoRA、人设对齐、情景记忆与推理加速。],
-        [三篇已接收研讨会论文（ICLR MemAgents 口头、ICML CoLoRAI、ACL SemEval）；两篇顶会审稿中。],
+        [四篇已接收（AACL-IJCNLP 2026 主会、ICLR MemAgents 口头、ICML CoLoRAI、ACL SemEval）；ECHO 审稿中，目标 EACL。],
       ),
     ),
     (
@@ -81,6 +81,10 @@
   publications: (
     (
       title: "Episodic Memory from Compression Boundaries in Latent Representation Space",
+      venue: "AACL-IJCNLP 2026 Main",
+    ),
+    (
+      title: "Episodic Memory from Compression Boundaries in Latent Representation Space",
       venue: "ICLR 2026 · MemAgents Workshop（口头）",
     ),
     (
@@ -90,6 +94,10 @@
     (
       title: "AKCIT-UFG at SemEval-2026 Task 8: Structured Chunking and Optimized Query Reformulation for Efficient Multi-Turn Retrieval",
       venue: "ACL 2026 · SemEval Workshop",
+    ),
+    (
+      title: "ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation",
+      venue: "ACL ARR 2026 August · EACL · 审稿中",
     ),
   ),
   skills: (

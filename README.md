@@ -7,11 +7,11 @@ Goiânia, Brazil · [Site](https://davidoneilai.github.io/davidoneil/) · [Linke
 
 ## Português
 
-Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios da **CEMIG** (CEIA/UFG) e NLP Team Lead no **Digital Humans II** (AKCIT/EMBRAPII). Contribuidor aceito em repositórios oficiais da **NVIDIA** (NeMo, Megatron, Nemotron). Papers em **ICLR**, **ICML** e **ACL**. Em produção: RAG híbrido, Graph RAG e MLOps no TCE-GO e no TCM-GO — economia reportada de **R$ 1,8 mi**.
+Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios da **CEMIG** (CEIA/UFG) e NLP Team Lead no **Digital Humans II** (AKCIT/EMBRAPII). Contribuidor aceito em repositórios oficiais da **NVIDIA** (NeMo, Megatron, Nemotron). Papers em **ICLR**, **ICML**, **ACL** e **AACL**. Em produção: RAG híbrido, Graph RAG e MLOps no TCE-GO e no TCM-GO — economia reportada de **R$ 1,8 mi**.
 
 ### Experiência
 
-- **NLP Team Lead · Digital Humans II (AKCIT/EMBRAPII)** — Time de NLP com reports. Interpretabilidade, alinhamento de persona, memória episódica; papers em ICLR, ICML e ACL.
+- **NLP Team Lead · Digital Humans II (AKCIT/EMBRAPII)** — Time de NLP com reports. Interpretabilidade, alinhamento de persona, memória episódica; papers em ICLR, ICML, ACL e AACL.
 - **Líder técnico · treino de modelos · CEMIG (CEIA/UFG)** — Lead do pós-treino dos LLMs próprios: SFT, LoRA, DPO, GRPO em Blackwell B200 / H100 / A100. PRs aceitos na NVIDIA.
 - **Tech Lead & NLP Engineer · TRON (CEIA)** — Copilot Graph RAG no Delphi legado, extensão web para atendentes, SFT do BGE-M3.
 - **NLP Engineer · TCE-GO** — RAG híbrido jurídico, SFT de encoders, Graph RAG e QA em produção.
@@ -20,9 +20,11 @@ Engenheiro de NLP/LLM com 4+ anos. Lead técnico do treino dos modelos próprios
 
 ### Publicações
 
+- *Episodic Memory from Compression Boundaries in Latent Representation Space* — AACL-IJCNLP 2026 Main
 - *Episodic Memory from Compression Boundaries in Latent Representation Space* — ICLR 2026 · MemAgents (Oral)
 - *Steering-Conditioned LoRA via Sparse Autoencoders* — ICML 2026 · CoLoRAI (Pôster)
 - *AKCIT-UFG at SemEval-2026 Task 8* — ACL 2026 · SemEval
+- *ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation* — ACL ARR 2026 August · EACL · em revisão
 
 ### Formação
 
@@ -34,11 +36,11 @@ Bacharelado em Inteligência Artificial — UFG (2023–2027). Primeiro curso de
 
 ## English
 
-NLP/LLM engineer with 4+ years. Technical lead for training **CEMIG**’s in-house models (CEIA/UFG) and NLP Team Lead on **Digital Humans II** (AKCIT/EMBRAPII). Accepted contributor to official **NVIDIA** repositories (NeMo, Megatron, Nemotron). Papers at **ICLR**, **ICML**, and **ACL**. In production: hybrid RAG, Graph RAG, and MLOps at TCE-GO and TCM-GO — reported **R$1.8M** in savings.
+NLP/LLM engineer with 4+ years. Technical lead for training **CEMIG**’s in-house models (CEIA/UFG) and NLP Team Lead on **Digital Humans II** (AKCIT/EMBRAPII). Accepted contributor to official **NVIDIA** repositories (NeMo, Megatron, Nemotron). Papers at **ICLR**, **ICML**, **ACL**, and **AACL**. In production: hybrid RAG, Graph RAG, and MLOps at TCE-GO and TCM-GO — reported **R$1.8M** in savings.
 
 ### Experience
 
-- **NLP Team Lead · Digital Humans II (AKCIT/EMBRAPII)** — NLP team with reports. Interpretability, persona alignment, episodic memory; papers at ICLR, ICML, and ACL.
+- **NLP Team Lead · Digital Humans II (AKCIT/EMBRAPII)** — NLP team with reports. Interpretability, persona alignment, episodic memory; papers at ICLR, ICML, ACL, and AACL.
 - **Technical lead · model training · CEMIG (CEIA/UFG)** — Lead for in-house LLM post-training: SFT, LoRA, DPO, GRPO on Blackwell B200 / H100 / A100. Accepted NVIDIA PRs.
 - **Tech Lead & NLP Engineer · TRON (CEIA)** — Graph RAG copilot in legacy Delphi, web extension for attendants, BGE-M3 SFT.
 - **NLP Engineer · TCE-GO** — Hybrid legal RAG, encoder SFT, Graph RAG, and production QA.
@@ -47,9 +49,11 @@ NLP/LLM engineer with 4+ years. Technical lead for training **CEMIG**’s in-hou
 
 ### Publications
 
+- *Episodic Memory from Compression Boundaries in Latent Representation Space* — AACL-IJCNLP 2026 Main
 - *Episodic Memory from Compression Boundaries in Latent Representation Space* — ICLR 2026 · MemAgents (Oral)
 - *Steering-Conditioned LoRA via Sparse Autoencoders* — ICML 2026 · CoLoRAI (Poster)
 - *AKCIT-UFG at SemEval-2026 Task 8* — ACL 2026 · SemEval
+- *ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation* — ACL ARR 2026 August · EACL · under review
 
 ### Education
 
@@ -61,11 +65,11 @@ B.S. in Artificial Intelligence — Federal University of Goiás (UFG), 2023–2
 
 ## 中文
 
-NLP/LLM 工程师，4+ 年经验。**CEMIG**（CEIA/UFG）自有模型训练技术负责人，**Digital Humans II**（AKCIT/EMBRAPII）NLP Team Lead。官方 **NVIDIA** 仓库已接受贡献（NeMo、Megatron、Nemotron）。论文见于 **ICLR**、**ICML**、**ACL**。生产侧：TCE-GO 与 TCM-GO 的混合 RAG、Graph RAG 与 MLOps——据报节省 **R$180 万**。
+NLP/LLM 工程师，4+ 年经验。**CEMIG**（CEIA/UFG）自有模型训练技术负责人，**Digital Humans II**（AKCIT/EMBRAPII）NLP Team Lead。官方 **NVIDIA** 仓库已接受贡献（NeMo、Megatron、Nemotron）。论文见于 **ICLR**、**ICML**、**ACL**、**AACL**。生产侧：TCE-GO 与 TCM-GO 的混合 RAG、Graph RAG 与 MLOps——据报节省 **R$180 万**。
 
 ### 经历
 
-- **NLP Team Lead · Digital Humans II（AKCIT/EMBRAPII）** — 带下属的 NLP 团队。可解释性、人设对齐、情景记忆；论文见于 ICLR、ICML、ACL。
+- **NLP Team Lead · Digital Humans II（AKCIT/EMBRAPII）** — 带下属的 NLP 团队。可解释性、人设对齐、情景记忆；论文见于 ICLR、ICML、ACL、AACL。
 - **技术负责人 · 模型训练 · CEMIG（CEIA/UFG）** — 自有 LLM 后训练负责人：Blackwell B200 / H100 / A100 上的 SFT、LoRA、DPO、GRPO。NVIDIA PR。
 - **Tech Lead & NLP Engineer · TRON（CEIA）** — 遗留 Delphi 中的 Graph RAG 副驾驶、坐席 Web 扩展、BGE-M3 SFT。
 - **NLP Engineer · TCE-GO** — 混合法律 RAG、编码器 SFT、Graph RAG 与生产问答。
@@ -74,9 +78,11 @@ NLP/LLM 工程师，4+ 年经验。**CEMIG**（CEIA/UFG）自有模型训练技�
 
 ### 论文
 
+- *Episodic Memory from Compression Boundaries in Latent Representation Space* — AACL-IJCNLP 2026 Main
 - *Episodic Memory from Compression Boundaries in Latent Representation Space* — ICLR 2026 · MemAgents（口头）
 - *Steering-Conditioned LoRA via Sparse Autoencoders* — ICML 2026 · CoLoRAI（海报）
 - *AKCIT-UFG at SemEval-2026 Task 8* — ACL 2026 · SemEval
+- *ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation* — ACL ARR 2026 August · EACL · 审稿中
 
 ### 教育
 

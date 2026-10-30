@@ -4,7 +4,7 @@ export const zh: LocaleCopy = {
   role: 'NLP / LLM 工程师',
   headline: '我负责 LLM 训练、可解释性研究，以及生产级 NLP。',
   summary:
-    'NLP/LLM 工程师，4+ 年经验。CEMIG（CEIA/UFG）自有模型训练技术负责人，Digital Humans II（AKCIT/EMBRAPII）NLP Team Lead。官方 NVIDIA 仓库已接受贡献（NeMo、Megatron、Nemotron）。论文见于 ICLR、ICML、ACL。生产侧：TCE-GO 与 TCM-GO 的混合 RAG、Graph RAG 与 MLOps——据报节省 R$180 万。',
+    'NLP/LLM 工程师，4+ 年经验。CEMIG（CEIA/UFG）自有模型训练技术负责人，Digital Humans II（AKCIT/EMBRAPII）NLP Team Lead。官方 NVIDIA 仓库已接受贡献（NeMo、Megatron、Nemotron）。论文见于 ICLR、ICML、ACL、AACL。生产侧：TCE-GO 与 TCM-GO 的混合 RAG、Graph RAG 与 MLOps——据报节省 R$180 万。',
   ctaCv: '下载简历',
   ctaWork: '查看作品',
   ctaContact: '联系',
@@ -29,7 +29,7 @@ export const zh: LocaleCopy = {
   langLabel: '语言',
   stats: [
     { value: '4+', label: '年 NLP' },
-    { value: '3', label: '已接收论文' },
+    { value: '4', label: '已接收论文' },
     { value: 'B200', label: 'Blackwell · H100 · A100' },
     { value: 'R$180 万', label: '据报节省 · TCM-GO' },
   ],
@@ -118,7 +118,7 @@ export const zh: LocaleCopy = {
       org: 'Digital Humans II — AKCIT / EMBRAPII',
       title: '可解释性与人设对齐',
       role: 'NLP Team Lead · 研究',
-      subtitle: 'SAE、steering、情景记忆——论文见于 ICLR、ICML、ACL。',
+      subtitle: 'SAE、steering、情景记忆——论文见于 ICLR、ICML、ACL、AACL。',
       context:
         '基础研究任务，不是产品。NLP 团队需要带人的技术领导：模型训练、可解释性与发表。重点是人设对齐（教育与研究工作流）、智能体记忆与高效适配——不是功能工程。',
       decision:
@@ -126,7 +126,7 @@ export const zh: LocaleCopy = {
       leadership:
         'NLP 团队技术负责人，有下属。把研究→训练→论文闭环跑完：团队在可解释性、记忆与面向真实应用的高效微调上发表。',
       outcome:
-        '三篇已接收：ICLR 2026 MemAgents（口头）、ICML 2026 CoLoRAI（海报）、ACL 2026 SemEval。两篇顶会审稿中（ACL ARR、AACL-IJCNLP）。',
+        '四篇已接收：AACL-IJCNLP 2026（主会）、ICLR 2026 MemAgents（口头）、ICML 2026 CoLoRAI（海报）、ACL 2026 SemEval。ECHO 在 ACL ARR 审稿中，目标 EACL。',
       stack: [
         'Sparse Autoencoders',
         'Steering',
@@ -136,9 +136,9 @@ export const zh: LocaleCopy = {
         'Inference acceleration',
       ],
       metrics: [
-        { value: '3', label: '已接收论文' },
-        { value: '口头', label: 'ICLR MemAgents' },
-        { value: '2', label: '审稿中稿件' },
+        { value: '4', label: '已接收论文' },
+        { value: '主会', label: 'AACL-IJCNLP' },
+        { value: '1', label: '审稿中 · EACL' },
       ],
     },
     {
@@ -199,7 +199,7 @@ export const zh: LocaleCopy = {
     {
       title: 'NLP Team Lead · 研究',
       org: 'Digital Humans II — AKCIT / EMBRAPII',
-      summary: '带下属的 NLP 团队。可解释性、人设、情景记忆——论文见于 ICLR、ICML、ACL。',
+      summary: '带下属的 NLP 团队。可解释性、人设、情景记忆——论文见于 ICLR、ICML、ACL、AACL。',
       href: '#case-digital-humans',
     },
     {
@@ -245,6 +245,11 @@ export const zh: LocaleCopy = {
   publicationsAccepted: [
     {
       title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
+      venue: 'AACL-IJCNLP 2026 Main',
+      note: '情景记忆工作的会议版本（主会）。',
+    },
+    {
+      title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
       venue: 'ICLR 2026 · MemAgents Workshop（口头）',
       note: 'LLM 智能体中的情景记忆、压缩边界与潜在表示。',
     },
@@ -263,13 +268,8 @@ export const zh: LocaleCopy = {
   publicationsReview: [
     {
       title: 'ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation',
-      venue: 'ACL ARR 2026 August · 审稿中',
+      venue: 'ACL ARR 2026 August · EACL · 审稿中',
       note: '潜在语域轴与 prompting 组合，用于人设条件生成。',
-    },
-    {
-      title: 'Episodic Memory from Compression Boundaries in Latent Representation Space',
-      venue: 'AACL-IJCNLP 2026 · 审稿中',
-      note: 'ICLR MemAgents 情景记忆工作的会议版本。',
     },
   ],
   ventures: [

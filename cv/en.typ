@@ -11,7 +11,7 @@
     "github.com/davidoneilai",
   ),
   summary: [
-    NLP/LLM engineer with 4+ years. Technical lead for training CEMIG's in-house LLMs (CEIA/UFG) and NLP Team Lead on Digital Humans II (AKCIT/EMBRAPII). Accepted contributor to official NVIDIA repositories (NeMo, Megatron, Nemotron). Papers at ICLR, ICML, and ACL. Production NLP at TCE-GO and TCM-GO — hybrid RAG, Graph RAG, MLOps; reported R\$1.8M in savings at TCM-GO.
+    NLP/LLM engineer with 4+ years. Technical lead for training CEMIG's in-house LLMs (CEIA/UFG) and NLP Team Lead on Digital Humans II (AKCIT/EMBRAPII). Accepted contributor to official NVIDIA repositories (NeMo, Megatron, Nemotron). Papers at ICLR, ICML, ACL, and AACL. Production NLP at TCE-GO and TCM-GO — hybrid RAG, Graph RAG, MLOps; reported R\$1.8M in savings at TCM-GO.
   ],
   experience: (
     (
@@ -21,7 +21,7 @@
       bullets: (
         [Led the NLP team (direct reports). Mandate: base research and publications — interpretability, persona alignment, episodic memory — not product engineering.],
         [Research on Sparse Autoencoders, steering, Steering-Conditioned LoRA, persona alignment, episodic memory, and inference acceleration.],
-        [Three accepted workshop papers (ICLR MemAgents oral, ICML CoLoRAI, ACL SemEval); two manuscripts under review at top-tier venues.],
+        [Four accepted papers (AACL-IJCNLP 2026 main, ICLR MemAgents oral, ICML CoLoRAI, ACL SemEval); ECHO under review for EACL.],
       ),
     ),
     (
@@ -81,6 +81,10 @@
   publications: (
     (
       title: "Episodic Memory from Compression Boundaries in Latent Representation Space",
+      venue: "AACL-IJCNLP 2026 Main",
+    ),
+    (
+      title: "Episodic Memory from Compression Boundaries in Latent Representation Space",
       venue: "ICLR 2026 · MemAgents Workshop (Oral)",
     ),
     (
@@ -90,6 +94,10 @@
     (
       title: "AKCIT-UFG at SemEval-2026 Task 8: Structured Chunking and Optimized Query Reformulation for Efficient Multi-Turn Retrieval",
       venue: "ACL 2026 · SemEval Workshop",
+    ),
+    (
+      title: "ECHO: A Latent Register Axis Composes with Prompting for Persona-Conditioned Generation",
+      venue: "ACL ARR 2026 August · EACL · under review",
     ),
   ),
   skills: (
