@@ -67,6 +67,14 @@
       ),
     ),
     (
+      title: "Teaching Assistant · NLP",
+      org: "Federal University of Goiás (UFG) · Prof. Arlindo Galvão",
+      period: "2026/2",
+      bullets: (
+        [Teaching assistant for the Natural Language Processing course, with Professor Arlindo Galvão.],
+      ),
+    ),
+    (
       title: "Founder · AI Products",
       org: "Pergunt.ai (CEO & Co-Founder, 2023) · Validoo · PUMP",
       period: "",

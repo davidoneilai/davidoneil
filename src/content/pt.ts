@@ -257,6 +257,12 @@ export const pt: LocaleCopy = {
       href: '#case-courts',
     },
     {
+      title: 'Professor auxiliar · NLP',
+      org: 'UFG · Prof. Arlindo Galvão',
+      period: '2026/2',
+      summary: 'Professor auxiliar na disciplina de Processamento de Linguagem Natural, com o professor Arlindo Galvão.',
+    },
+    {
       title: 'CEO & Co-Founder',
       org: 'Pergunt.ai',
       period: '2023',

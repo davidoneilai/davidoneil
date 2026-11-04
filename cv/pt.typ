@@ -67,6 +67,14 @@
       ),
     ),
     (
+      title: "Professor auxiliar · NLP",
+      org: "Universidade Federal de Goiás (UFG) · Prof. Arlindo Galvão",
+      period: "2026/2",
+      bullets: (
+        [Professor auxiliar na disciplina de Processamento de Linguagem Natural, com o professor Arlindo Galvão.],
+      ),
+    ),
+    (
       title: "Fundador · Produtos de IA",
       org: "Pergunt.ai (CEO & Co-Founder, 2023) · Validoo · PUMP",
       period: "",
