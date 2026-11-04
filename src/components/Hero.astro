@@ -2,7 +2,6 @@
 import type { LocaleCopy } from '../content/types';
 import { profile } from '../content/profile';
 import BlockKicker from './BlockKicker.astro';
-import ResidualNet from './ResidualNet.astro';
 
 interface Props {
   copy: LocaleCopy;
@@ -11,15 +10,58 @@ interface Props {
 }
 
 const { copy, cvHref, photoSrc } = Astro.props;
+const dims = 8;
+
+// Deterministic pseudo-embedding per token: what the vector "settles" into once trained.
+const hash = (s: string, i: number) => {
+  let h = 2166136261 ^ i;
+  for (const ch of s) h = Math.imul(h ^ ch.codePointAt(0)!, 16777619);
+  return ((h >>> 0) % 2000) / 1000 - 1;
+};
+const tokens = profile.nameTokens.map((t) => ({
+  t,
+  vec: Array.from({ length: dims }, (_, i) => hash(t, i).toFixed(3)),
+}));
 ---
 
-<section class="hero">
+<section class="hero" id="top">
   <div class="wrap hero__grid">
     <BlockKicker name="embeddings" current />
     <div>
       <p class="eyebrow hero-anim">{copy.role}</p>
       <h1 class="hero-anim">{profile.name}</h1>
+
+      <div class="tokenizer hero-anim" aria-hidden="true">
+        <p class="tokenizer__call">
+          <span class="tokenizer__fn">tokenize</span>(<span class="tokenizer__str">"{profile.name}"</span>)
+        </p>
+        <ol class="tokenizer__toks">
+          {
+            tokens.map((tok, i) => (
+              <li class="tokenizer__tok" style={`--i:${i}`}>
+                <span class="tokenizer__text">
+                  {tok.t.startsWith('▁') ? (
+                    <>
+                      <span class="tok__sp">▁</span>
+                      {tok.t.slice(1)}
+                    </>
+                  ) : (
+                    tok.t
+                  )}
+                </span>
+                <span class="tokenizer__vec">
+                  {tok.vec.map((v) => (
+                    <i data-v={v} />
+                  ))}
+                </span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
       <p class="hero__tagline hero-anim">{copy.headline}</p>
+      <p class="hero__intro hero-anim">{copy.train.intro}</p>
       <p class="hero__summary hero-anim">{copy.summary}</p>
       <div class="hero__actions hero-anim">
         <a class="btn" href={cvHref} download>{copy.ctaCv}</a>
@@ -37,6 +79,7 @@ const { copy, cvHref, photoSrc } = Astro.props;
           loading="eager"
           decoding="async"
         />
+        <figcaption>x₀ · input</figcaption>
       </figure>
       <div class="stats">
         {
@@ -48,7 +91,6 @@ const { copy, cvHref, photoSrc } = Astro.props;
           ))
         }
       </div>
-      <ResidualNet label={copy.backpropLabel} hint={copy.backpropHint} />
     </aside>
   </div>
 </section>

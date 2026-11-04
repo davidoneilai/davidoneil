@@ -1,6 +1,24 @@
 import type { LocaleCopy } from './types';
 
 export const pt: LocaleCopy = {
+  train: {
+    intro:
+      'Você não está lendo um currículo: está treinando um modelo. Cada seção é um batch. Role a página e acompanhe a loss cair até a sua rede saber quem é David.',
+    title: 'treinando',
+    knowledge: 'de David aprendido',
+    layer: 'camada',
+    reconstruction: 'reconstrução',
+    idle: 'aguardando dados · role a página',
+    learning: 'aprendendo…',
+    restored: 'checkpoint restaurado',
+    converged: 'convergiu ✓ agora você conhece David',
+    fit: 'acelerar treino',
+    weights: 'baixar pesos (CV)',
+    retrain: 'retreinar',
+    minimize: 'minimizar painel de treino',
+    infer: 'rodar inferência',
+    clusters: ['Pós-treino', 'Interpretabilidade', 'Retrieval & produção', 'Compute & infra', 'Papers & open source', 'Trajetória'],
+  },
   role: 'Engenheiro de NLP / LLM',
   headline: 'Treino de LLMs, pesquisa em interpretabilidade e sistemas de NLP em produção.',
   summary:
@@ -27,8 +45,6 @@ export const pt: LocaleCopy = {
   educationLabel: 'Formação',
   contactLabel: 'Contato',
   langLabel: 'Idioma',
-  backpropLabel: 'Disparar um passo de backpropagation',
-  backpropHint: 'clique · 1 passo',
   nextTokenLabel: 'próximo token',
   replayLabel: 'gerar de novo',
   tokens: [
@@ -44,7 +60,7 @@ export const pt: LocaleCopy = {
   stats: [
     { value: '4+', label: 'anos de NLP' },
     { value: '4', label: 'papers aceitos' },
-    { value: 'B200', label: 'Blackwell · H100 · A100' },
+    { value: '3', label: 'repos oficiais NVIDIA · código aceito' },
     { value: 'R$ 1,8 mi', label: 'economia reportada · TCM-GO' },
   ],
   skills: [
@@ -60,10 +76,6 @@ export const pt: LocaleCopy = {
         'DPO / GRPO',
         'Dados sintéticos',
         'Eval pública + própria',
-        'Qwen-3 / 3.5',
-        'Gemma-4',
-        'LLaMA 3.1 / 3.2',
-        'Tucano',
         'Axolotl / Unsloth',
       ],
     },

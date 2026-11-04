@@ -10,9 +10,16 @@ import Ventures from './Ventures.astro';
 import Education from './Education.astro';
 import Contact from './Contact.astro';
 import SiteFooter from './SiteFooter.astro';
+import TrainingHud from './TrainingHud.astro';
+import Steering from './Steering.astro';
 import type { Locale } from '../content/types';
-import { getCopy, cvHref } from '../content';
+import { getCopy, getSteer, cvHref } from '../content';
 import { profile } from '../content/profile';
+import { buildConcepts } from '../content/concepts';
+import { buildPassages } from '../content/passages';
+import { retrievalByLocale } from '../content/retrieval';
+import Retrieval from './Retrieval.astro';
+import latent from '../data/latent.json';
 
 interface Props {
   locale: Locale;
@@ -24,9 +31,32 @@ const base = import.meta.env.BASE_URL;
 const cv = cvHref(locale, base);
 const photoSrc = `${base}${profile.photo}`;
 const title = `${profile.name} · ${t.role}`;
+
+// Latent space built offline by scripts/embed.mjs (`npm run embed`).
+type ConceptAt = { x: number; y: number; n: string[] };
+const space = (latent.locales as Record<string, (typeof latent.locales)['pt'] | undefined>)[locale];
+const conceptAt = (space?.concepts ?? {}) as Record<string, ConceptAt | undefined>;
+const passageAt = (space?.passages ?? {}) as Record<string, { x: number; y: number } | undefined>;
+
+const concepts = buildConcepts(t).map(({ label, cluster, section }) => {
+  const at = conceptAt[label];
+  return { label, cluster, section, ...(at ? { x: at.x, y: at.y, n: at.n } : {}) };
+});
+const passages = buildPassages(t);
+const stale =
+  concepts.filter((c) => !conceptAt[c.label]).length + passages.filter((p) => !passageAt[p.id]).length;
+if (stale) console.warn(`[latent] ${locale}: ${stale} items have no embedding; run "npm run embed"`);
+const trainData = JSON.stringify({
+  concepts,
+  clusters: t.train.clusters,
+  clusterPos: space?.clusterPos ?? [],
+  strings: t.train,
+});
 ---
 
 <BaseLayout locale={locale} title={title} description={t.summary}>
+  <canvas class="field" aria-hidden="true"></canvas>
+  <script type="application/json" id="train-data" set:html={trainData} />
   <SiteHeader
     locale={locale}
     cvHref={cv}
@@ -55,6 +85,14 @@ const title = `${profile.name} · ${t.role}`;
     <Ventures label={t.openSourceLabel} items={t.openSource} id="open-source" />
     <Ventures label={t.builderLabel} items={t.ventures} />
     <Education label={t.educationLabel} items={t.education} />
+    <Steering copy={getSteer(locale)} />
+    <Retrieval
+      copy={retrievalByLocale[locale]}
+      passages={passages}
+      positions={passageAt as Record<string, { x: number; y: number }>}
+      vectorsHref={`${base}latent/${locale}.json`}
+      model={latent.model}
+    />
     <Contact copy={t} cvHref={cv} />
   </main>
 
@@ -64,4 +102,5 @@ const title = `${profile.name} · ${t.role}`;
     nextLabel={t.nextTokenLabel}
     replayLabel={t.replayLabel}
   />
+  <TrainingHud copy={t.train} cvHref={cv} photoSrc={photoSrc} />
 </BaseLayout>

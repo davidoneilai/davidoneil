@@ -1,7 +1,8 @@
-import type { Locale, LocaleCopy } from './types';
+import type { Locale, LocaleCopy, SteerCopy } from './types';
 import { en } from './en';
 import { pt } from './pt';
 import { zh } from './zh';
+import { steerByLocale } from './steer';
 
 export const locales: Locale[] = ['en', 'pt', 'zh'];
 
@@ -26,4 +27,8 @@ export function getCopy(locale: Locale): LocaleCopy {
 /** Locale-matched CV download. */
 export function cvHref(locale: Locale, base: string): string {
   return `${base}${cvByLocale[locale] ?? cvByLocale.en}`;
+}
+
+export function getSteer(locale: Locale): SteerCopy {
+  return steerByLocale[locale] ?? steerByLocale.en;
 }

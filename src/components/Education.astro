@@ -11,7 +11,7 @@ const { label, items } = Astro.props;
 
 <section class="section" id="education">
   <div class="wrap">
-    <h2>{label}</h2>
+    <h2 data-denoise>{label}</h2>
     {
       items.map((e) => (
         <article class="edu">

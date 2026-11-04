@@ -1,6 +1,24 @@
 import type { LocaleCopy } from './types';
 
 export const en: LocaleCopy = {
+  train: {
+    intro:
+      'You are not reading a résumé: you are training a model. Every section is a batch. Scroll and watch the loss drop until your network knows who David is.',
+    title: 'training',
+    knowledge: 'of David learned',
+    layer: 'layer',
+    reconstruction: 'reconstruction',
+    idle: 'waiting for data · keep scrolling',
+    learning: 'learning…',
+    restored: 'checkpoint restored',
+    converged: 'converged ✓ you now know David',
+    fit: 'speed up training',
+    weights: 'download weights (CV)',
+    retrain: 'retrain',
+    minimize: 'minimize training panel',
+    infer: 'run inference',
+    clusters: ['Post-training', 'Interpretability', 'Retrieval & production', 'Compute & infra', 'Papers & open source', 'Trajectory'],
+  },
   role: 'NLP / LLM Engineer',
   headline: 'LLM training, interpretability research, and production NLP systems.',
   summary:
@@ -27,8 +45,6 @@ export const en: LocaleCopy = {
   educationLabel: 'Education',
   contactLabel: 'Contact',
   langLabel: 'Language',
-  backpropLabel: 'Fire one backpropagation step',
-  backpropHint: 'click · 1 step',
   nextTokenLabel: 'next token',
   replayLabel: 'generate again',
   tokens: [
@@ -43,7 +59,7 @@ export const en: LocaleCopy = {
   stats: [
     { value: '4+', label: 'years of NLP' },
     { value: '4', label: 'accepted papers' },
-    { value: 'B200', label: 'Blackwell · H100 · A100' },
+    { value: '3', label: 'official NVIDIA repos · merged code' },
     { value: 'R$1.8M', label: 'reported savings · TCM-GO' },
   ],
   skills: [
@@ -59,10 +75,6 @@ export const en: LocaleCopy = {
         'DPO / GRPO',
         'Synthetic data',
         'Public + custom eval',
-        'Qwen-3 / 3.5',
-        'Gemma-4',
-        'LLaMA 3.1 / 3.2',
-        'Tucano',
         'Axolotl / Unsloth',
       ],
     },

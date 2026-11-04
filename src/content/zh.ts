@@ -1,6 +1,23 @@
 import type { LocaleCopy } from './types';
 
 export const zh: LocaleCopy = {
+  train: {
+    intro: '你读的不是一份简历，而是在训练一个模型。每个章节都是一个 batch。向下滚动，看着 loss 下降，直到你的网络认识 David。',
+    title: '训练中',
+    knowledge: '的 David 已学会',
+    layer: '层',
+    reconstruction: '重建',
+    idle: '等待数据 · 继续滚动',
+    learning: '学习中…',
+    restored: '已恢复 checkpoint',
+    converged: '已收敛 ✓ 你现在认识 David 了',
+    fit: '加速训练',
+    weights: '下载权重（简历）',
+    retrain: '重新训练',
+    minimize: '最小化训练面板',
+    infer: '运行推理',
+    clusters: ['后训练', '可解释性', '检索与生产', '算力与基础设施', '论文与开源', '经历'],
+  },
   role: 'NLP / LLM 工程师',
   headline: '我负责 LLM 训练、可解释性研究，以及生产级 NLP。',
   summary:
@@ -27,8 +44,6 @@ export const zh: LocaleCopy = {
   educationLabel: '教育',
   contactLabel: '联系',
   langLabel: '语言',
-  backpropLabel: '触发一次反向传播',
-  backpropHint: '点击 · 单步',
   nextTokenLabel: '下一个 token',
   replayLabel: '重新生成',
   tokens: [
@@ -41,7 +56,7 @@ export const zh: LocaleCopy = {
   stats: [
     { value: '4+', label: '年 NLP' },
     { value: '4', label: '已接收论文' },
-    { value: 'B200', label: 'Blackwell · H100 · A100' },
+    { value: '3', label: 'NVIDIA 官方仓库 · 代码已合并' },
     { value: 'R$180 万', label: '据报节省 · TCM-GO' },
   ],
   skills: [
@@ -57,10 +72,6 @@ export const zh: LocaleCopy = {
         'DPO / GRPO',
         '合成数据',
         '公开 + 自建评测',
-        'Qwen-3 / 3.5',
-        'Gemma-4',
-        'LLaMA 3.1 / 3.2',
-        'Tucano',
         'Axolotl / Unsloth',
       ],
     },

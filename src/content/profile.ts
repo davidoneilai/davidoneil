@@ -9,4 +9,5 @@ export const profile: Profile = {
   github: 'https://github.com/davidoneilai',
   huggingface: 'https://huggingface.co/davidoneil',
   photo: 'david.png',
+  nameTokens: ['▁David', '▁O', "'", 'Neil'],
 };

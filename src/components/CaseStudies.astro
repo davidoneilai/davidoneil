@@ -12,7 +12,7 @@ const { copy } = Astro.props;
 <section class="section" id="cases">
   <div class="wrap">
     <BlockKicker name="feed-forward" index="01" />
-    <p class="section__label">{copy.casesLabel}</p>
+    <p class="section__label" data-denoise>{copy.casesLabel}</p>
     <div class="cases">
       {
         copy.cases.map((c) => (
@@ -21,7 +21,7 @@ const { copy } = Astro.props;
               <div class="case__index">{c.index}</div>
               <div>
                 <p class="case__org">{c.org}</p>
-                <h3>{c.title}</h3>
+                <h3 data-denoise>{c.title}</h3>
                 <p class="case__role">{c.role}</p>
                 <p class="case__sub">{c.subtitle}</p>
               </div>

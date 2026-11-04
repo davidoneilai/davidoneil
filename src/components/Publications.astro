@@ -15,7 +15,7 @@ const { acceptedLabel, reviewLabel, accepted, review } = Astro.props;
 <section class="section section--paper" id="publications">
   <div class="wrap">
     <BlockKicker name="multi-head attention" index="02" />
-    <h2>{acceptedLabel}</h2>
+    <h2 data-denoise>{acceptedLabel}</h2>
     <div class="pub-list">
       {
         accepted.map((p) => (
@@ -28,7 +28,7 @@ const { acceptedLabel, reviewLabel, accepted, review } = Astro.props;
       }
     </div>
 
-    <h2>{reviewLabel}</h2>
+    <h2 data-denoise>{reviewLabel}</h2>
     <div class="pub-list">
       {
         review.map((p) => (

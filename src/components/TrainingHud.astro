@@ -1,0 +1,46 @@
+---
+import type { TrainCopy } from '../content/types';
+
+interface Props {
+  copy: TrainCopy;
+  cvHref: string;
+  photoSrc: string;
+}
+
+const { copy, cvHref, photoSrc } = Astro.props;
+---
+
+<aside class="hud" data-photo={photoSrc} aria-label={copy.title}>
+  <div class="hud__bar" aria-hidden="true"><span></span></div>
+  <header class="hud__head">
+    <span class="hud__dot" aria-hidden="true"></span>
+    <span class="hud__title">{copy.title} · <b>david-oneil.ckpt</b></span>
+    <button type="button" class="hud__min" aria-label={copy.minimize} aria-expanded="true">–</button>
+  </header>
+  <div class="hud__body">
+    <figure class="hud__recon">
+      <canvas width="64" height="64" aria-hidden="true"></canvas>
+      <figcaption>{copy.reconstruction}</figcaption>
+    </figure>
+    <dl class="hud__stats">
+      <div><dt>epoch</dt><dd class="hud__epoch">1</dd></div>
+      <div><dt>step</dt><dd class="hud__step">0000</dd></div>
+      <div class="hud__loss-row"><dt>loss</dt><dd class="hud__loss">2.303</dd></div>
+      <svg class="hud__spark" viewBox="0 0 120 28" preserveAspectRatio="none" aria-hidden="true">
+        <polyline points="0,2"></polyline>
+      </svg>
+    </dl>
+  </div>
+  <p class="hud__knowledge">
+    <span class="hud__meter" aria-hidden="true"><span></span></span>
+    <span><b class="hud__pct">0%</b> {copy.knowledge}</span>
+  </p>
+  <p class="hud__layer">{copy.layer} ▸ <span class="hud__layer-name">embeddings</span></p>
+  <p class="hud__status" aria-live="polite">{copy.idle}</p>
+  <div class="hud__actions">
+    <button type="button" class="hud__btn hud__fit">⏩ {copy.fit}</button>
+    <a class="hud__btn hud__infer" href="#steer">▶ {copy.infer}</a>
+    <a class="hud__btn hud__weights" href={cvHref} download>⇩ {copy.weights}</a>
+    <button type="button" class="hud__btn hud__retrain">↺ {copy.retrain}</button>
+  </div>
+</aside>

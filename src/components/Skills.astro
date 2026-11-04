@@ -13,7 +13,7 @@ const { label, clusters } = Astro.props;
 <section class="section" id="skills">
   <div class="wrap">
     <BlockKicker name="feed-forward" index="02" />
-    <p class="section__label">{label}</p>
+    <p class="section__label" data-denoise>{label}</p>
     <div class="skills">
       {
         clusters.map((cluster) => (

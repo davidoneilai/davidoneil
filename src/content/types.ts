@@ -9,9 +9,67 @@ export interface Profile {
   github?: string;
   huggingface?: string;
   photo: string;
+  /** Illustrative subword split of the name, shown in the hero tokenizer. */
+  nameTokens: string[];
+}
+
+export interface TrainCopy {
+  intro: string;
+  title: string;
+  knowledge: string;
+  layer: string;
+  reconstruction: string;
+  idle: string;
+  learning: string;
+  restored: string;
+  converged: string;
+  fit: string;
+  weights: string;
+  retrain: string;
+  minimize: string;
+  infer: string;
+  clusters: [string, string, string, string, string, string];
+}
+
+export interface TrainCopy {
+  intro: string;
+  title: string;
+  knowledge: string;
+  layer: string;
+  reconstruction: string;
+  idle: string;
+  learning: string;
+  restored: string;
+  converged: string;
+  fit: string;
+  weights: string;
+  retrain: string;
+  minimize: string;
+  clusters: [string, string, string, string, string, string];
+}
+
+type Latent = [label: string, activation: number];
+
+/** ECHO-style demo: a register axis (3 anchors) composed with a choice of prompt. */
+export interface SteerCopy {
+  label: string;
+  title: string;
+  lede: string;
+  promptLabel: string;
+  axisLabel: string;
+  axis: [string, string, string];
+  featuresLabel: string;
+  generating: string;
+  tokensLabel: string;
+  note: string;
+  /** Top SAE latents at each axis anchor. */
+  features: [Latent[], Latent[], Latent[]];
+  prompts: { q: string; out: [string, string, string] }[];
 }
 
 export interface LocaleCopy {
+  train: TrainCopy;
+  train: TrainCopy;
   role: string;
   headline: string;
   summary: string;
@@ -37,8 +95,6 @@ export interface LocaleCopy {
   educationLabel: string;
   contactLabel: string;
   langLabel: string;
-  backpropLabel: string;
-  backpropHint: string;
   nextTokenLabel: string;
   replayLabel: string;
   tokens: { t: string; p: number; alt: [string, number][] }[];

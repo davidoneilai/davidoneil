@@ -1,0 +1,70 @@
+---
+import type { RetrievalCopy } from '../content/retrieval';
+import type { Passage } from '../content/passages';
+import BlockKicker from './BlockKicker.astro';
+
+interface Props {
+  copy: RetrievalCopy;
+  passages: Passage[];
+  /** UMAP positions keyed by passage id (missing if the latent build is stale). */
+  positions: Record<string, { x: number; y: number }>;
+  vectorsHref: string;
+  model: string;
+}
+
+const { copy, passages, positions, vectorsHref, model } = Astro.props;
+const data = JSON.stringify({
+  passages: passages.map((p) => ({ ...p, pos: positions[p.id] ?? null })),
+  kinds: copy.kinds,
+  vectorsHref,
+  model,
+  strings: {
+    modeLexical: copy.modeLexical,
+    modeHybrid: copy.modeHybrid,
+    loading: copy.loading,
+    denseError: copy.denseError,
+    noResults: copy.noResults,
+    queryLabel: copy.queryLabel,
+  },
+});
+---
+
+<section class="section rag" id="rag">
+  <div class="wrap">
+    <BlockKicker name="retrieval · RAG" index="04" />
+    <p class="section__label" data-denoise>{copy.label}</p>
+    <h2 data-denoise>{copy.title}</h2>
+    <p class="rag__lede">{copy.lede}</p>
+
+    <div class="rag__grid">
+      <div class="rag__search">
+        <form class="rag__form" role="search">
+          <label class="sr-only" for="rag-q">{copy.title}</label>
+          <span class="rag__prompt" aria-hidden="true">›</span>
+          <input id="rag-q" class="rag__input" type="search" autocomplete="off" placeholder={copy.placeholder} />
+          <button class="rag__go" type="submit">{copy.submit}</button>
+        </form>
+        <div class="rag__chips">
+          {copy.suggestions.map((s) => <button type="button" class="rag__chip">{s}</button>)}
+        </div>
+        <div class="rag__mode">
+          <span class="rag__mode-label">{copy.modeLexical}</span>
+          <button type="button" class="rag__dense">{copy.loadDense}</button>
+          <span class="rag__progress" hidden><span></span></span>
+        </div>
+        <ol class="rag__results" aria-live="polite"></ol>
+      </div>
+
+      <figure class="rag__map">
+        <canvas aria-hidden="true"></canvas>
+        <figcaption>
+          <span>{copy.mapLabel}</span>
+          <span class="rag__legend" aria-hidden="true"></span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="steer__note">{copy.note}</p>
+    <script type="application/json" id="rag-data" set:html={data} />
+  </div>
+</section>

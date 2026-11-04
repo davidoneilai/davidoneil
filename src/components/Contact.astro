@@ -13,7 +13,7 @@ const tel = profile.phone.replace(/\s/g, '');
 
 <section class="section section--navy" id="contact">
   <div class="wrap">
-    <h2>{copy.contactLabel}</h2>
+    <h2 data-denoise>{copy.contactLabel}</h2>
     <div class="contact-grid">
       <a href={`mailto:${profile.email}`}>{profile.email}</a>
       <a href={`tel:${tel}`}>{profile.phone}</a>

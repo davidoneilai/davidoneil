@@ -12,7 +12,7 @@ const { label, items, id = 'ventures' } = Astro.props;
 
 <section class="section section--paper" id={id}>
   <div class="wrap">
-    <p class="section__label">{label}</p>
+    <p class="section__label" data-denoise>{label}</p>
     <div class="ventures">
       {
         items.map((v) => (

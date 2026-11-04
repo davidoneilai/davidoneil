@@ -1,0 +1,102 @@
+---
+import type { SteerCopy } from '../content/types';
+import BlockKicker from './BlockKicker.astro';
+
+interface Props {
+  copy: SteerCopy;
+}
+
+const { copy } = Astro.props;
+const initialPrompt = 0;
+const initialLevel = 1; // neutral
+
+// Stable pseudo latent ids, so the dictionary reads like a real SAE readout.
+const latentId = (label: string) => {
+  let h = 2166136261;
+  for (const ch of label) h = Math.imul(h ^ ch.codePointAt(0)!, 16777619);
+  return `#${String((h >>> 0) % 16384).padStart(5, '0')}`;
+};
+const latents = [...new Set(copy.features.flat().map(([l]) => l))].map((label) => ({ label, id: latentId(label) }));
+const data = JSON.stringify({ prompts: copy.prompts, features: copy.features, latents });
+const initial = copy.features[initialLevel].slice().sort((a, b) => b[1] - a[1]);
+---
+
+<section class="section steer" id="steer">
+  <div class="wrap">
+    <BlockKicker name="decode · steering" index="03" />
+    <p class="section__label" data-denoise>{copy.label}</p>
+    <h2 data-denoise>{copy.title}</h2>
+    <p class="steer__lede">{copy.lede}</p>
+
+    <div class="steer__grid">
+      <div class="steer__controls">
+        <fieldset class="steer__prompts">
+          <legend>{copy.promptLabel}</legend>
+          {
+            copy.prompts.map((p, i) => (
+              <button type="button" class="steer__prompt" data-prompt={i} aria-pressed={i === initialPrompt ? 'true' : 'false'}>
+                {p.q}
+              </button>
+            ))
+          }
+        </fieldset>
+
+        <div class="steer__axis">
+          <label for="steer-alpha">
+            {copy.axisLabel}
+            <output class="steer__alpha" for="steer-alpha">α = +0.0</output>
+          </label>
+          <input
+            id="steer-alpha"
+            class="steer__range"
+            type="range"
+            min="-1"
+            max="1"
+            step="0.01"
+            value="0"
+            aria-valuetext={copy.axis[initialLevel]}
+            data-axis={JSON.stringify(copy.axis)}
+          />
+          <div class="steer__ticks" aria-hidden="true">
+            {copy.axis.map((a, i) => <span class:list={{ 'is-on': i === initialLevel }}>{a}</span>)}
+          </div>
+        </div>
+
+        <div class="steer__latents">
+          <p class="steer__sub">{copy.featuresLabel}</p>
+          <ol class="steer__bars">
+            {
+              initial.map(([label, a]) => (
+                <li>
+                  <span class="steer__lid">{latentId(label)}</span>
+                  <span class="steer__lname">{label}</span>
+                  <span class="steer__lbar">
+                    <span style={`transform:scaleX(${a})`} />
+                  </span>
+                  <span class="steer__lval">{a.toFixed(2)}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+
+      <div class="steer__out" data-level={initialLevel}>
+        <p class="steer__call" aria-hidden="true">
+          <span class="tokenizer__fn">david.generate</span>(prompt, steer=<span class="steer__call-alpha">0.0</span>·v<sub>register</sub>)
+        </p>
+        <p class="steer__q">› <span>{copy.prompts[initialPrompt].q}</span></p>
+        <p class="steer__text">{copy.prompts[initialPrompt].out[initialLevel]}</p>
+        <p class="steer__live sr-only" aria-live="polite"></p>
+        <p class="steer__meta" aria-hidden="true">
+          <span class="steer__status"></span>
+          <span><b class="steer__count">0</b> {copy.tokensLabel}</span>
+        </p>
+      </div>
+    </div>
+
+    <p class="steer__note">{copy.note}</p>
+    <script type="application/json" id="steer-data" set:html={data} />
+    <span hidden class="steer__generating">{copy.generating}</span>
+  </div>
+</section>
